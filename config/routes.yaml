@@ -1,0 +1,3 @@
+test:
+   path: /hello
+   controller: App\Controller\TestController
