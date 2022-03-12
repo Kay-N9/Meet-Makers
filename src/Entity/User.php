@@ -59,7 +59,7 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
 
     /**
      * @ORM\ManyToOne(targetEntity=UserType::class, inversedBy="users")
-     * @ORM\JoinColumn(nullable=false)
+    * @ORM\JoinColumn(nullable=false)
      */
     private $userType;
 

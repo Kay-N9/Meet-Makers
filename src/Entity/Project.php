@@ -22,7 +22,7 @@ class Project
     /**
      * @ORM\Column(type="datetime")
      */
-    private $dateLacement;
+    private $dateLancement;
 
     /**
      * @ORM\Column(type="string", length=255)
@@ -35,7 +35,7 @@ class Project
     private $uploadPicture;
 
     /**
-     * @ORM\Column(type="integer")
+     * @ORM\Column(type="float")
      */
     private $budget;
 
@@ -48,7 +48,7 @@ class Project
     /**
      * @ORM\ManyToOne(targetEntity=TypeDeServices::class, inversedBy="projects")
      */
-    private $typeService;
+    private $typeServices;
 
     /**
      * @ORM\ManyToMany(targetEntity=Candidate::class, mappedBy="projectName")
@@ -78,12 +78,12 @@ class Project
 
     public function getDateLacement(): ?\DateTimeInterface
     {
-        return $this->dateLacement;
+        return $this->dateLancement;
     }
 
-    public function setDateLacement(\DateTimeInterface $dateLacement): self
+    public function setDateLacement(\DateTimeInterface $dateLancement): self
     {
-        $this->dateLacement = $dateLacement;
+        $this->dateLancement = $dateLancement;
 
         return $this;
     }
@@ -138,12 +138,12 @@ class Project
 
     public function getTypeService(): ?TypeDeServices
     {
-        return $this->typeService;
+        return $this->typeServices;
     }
 
-    public function setTypeService(?TypeDeServices $typeService): self
+    public function setTypeService(?TypeDeServices $typeServices): self
     {
-        $this->typeService = $typeService;
+        $this->typeServices = $typeServices;
 
         return $this;
     }
