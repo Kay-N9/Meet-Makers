@@ -16,15 +16,27 @@
         "symfony/flex": "^1.18",
         "symfony/form": "5.4.*",
         "symfony/framework-bundle": "5.4.*",
+<<<<<<< HEAD
         "symfony/proxy-manager-bridge": "5.4.*",
         "symfony/runtime": "^5.4",
+=======
+        "symfony/mailer": "5.4.*",
+        "symfony/proxy-manager-bridge": "5.4.*",
+        "symfony/runtime": "^5.4",
+        "symfony/security-bundle": "5.4.*",
+>>>>>>> 64404a614e1f5626b44336b6b93d00306ada3e83
         "symfony/twig-bundle": "5.4.*",
         "symfony/validator": "5.4.*",
         "symfony/yaml": "5.4.*",
+        "symfonycasts/verify-email-bundle": "^1.10",
         "twig/extra-bundle": "^2.12|^3.0",
         "twig/twig": "^2.12|^3.0"
     },
     "require-dev": {
+<<<<<<< HEAD
+=======
+        "doctrine/doctrine-fixtures-bundle": "^3.4",
+>>>>>>> 64404a614e1f5626b44336b6b93d00306ada3e83
         "symfony/maker-bundle": "^1.38",
         "symfony/var-dumper": "5.4.*"
     },
