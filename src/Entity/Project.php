@@ -66,9 +66,17 @@ class Project
      */
     private $createBy;
 
+    /**
+     * @ORM\ManyToMany(targetEntity=Category::class, inversedBy="projects")
+     */
+    private $style;
+
+
+
     public function __construct()
     {
         $this->candidates = new ArrayCollection();
+        $this->style = new ArrayCollection();
     }
 
     public function getId(): ?int
@@ -198,4 +206,29 @@ class Project
 
         return $this;
     }
+
+    /**
+     * @return Collection<int, Category>
+     */
+    public function getStyle(): Collection
+    {
+        return $this->style;
+    }
+
+    public function addStyle(Category $style): self
+    {
+        if (!$this->style->contains($style)) {
+            $this->style[] = $style;
+        }
+
+        return $this;
+    }
+
+    public function removeStyle(Category $style): self
+    {
+        $this->style->removeElement($style);
+
+        return $this;
+    }
+
 }

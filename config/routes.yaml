@@ -1,3 +1,12 @@
-test:
-   path: /hello
-   controller: App\Controller\TestController
+project_main_home:
+   path: /
+   controller: App\Controller\HomeController::index
+
+
+project_log:
+   path: /login
+   controller: App\Controller\SecurityController::login
+
+project_regist:
+   path: /register
+   controller: App\Controller\RegistrationController::register
