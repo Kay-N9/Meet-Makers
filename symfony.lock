@@ -20,9 +20,15 @@
     "doctrine/common": {
         "version": "3.2.2"
     },
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+=======
     "doctrine/data-fixtures": {
         "version": "1.5.2"
     },
+>>>>>>> 64404a614e1f5626b44336b6b93d00306ada3e83
+>>>>>>> 6615a31123908b8b95ff5cdaaf807ed53fd28ad1
     "doctrine/dbal": {
         "version": "3.3.3"
     },
@@ -38,6 +44,16 @@
             "ref": "ddddd8249dd55bbda16fa7a45bb7499ef6f8e90e"
         },
         "files": [
+<<<<<<< HEAD
+            "config/packages/doctrine.yaml",
+            "src/Entity/.gitignore",
+            "src/Repository/.gitignore"
+=======
+<<<<<<< HEAD
+            "config/packages/doctrine.yaml",
+            "src/Entity/.gitignore",
+            "src/Repository/.gitignore"
+=======
             "./config/packages/doctrine.yaml",
             "./src/Entity/.gitignore",
             "./src/Repository/.gitignore"
@@ -53,6 +69,8 @@
         },
         "files": [
             "./src/DataFixtures/AppFixtures.php"
+>>>>>>> 64404a614e1f5626b44336b6b93d00306ada3e83
+>>>>>>> 6615a31123908b8b95ff5cdaaf807ed53fd28ad1
         ]
     },
     "doctrine/doctrine-migrations-bundle": {
@@ -64,8 +82,18 @@
             "ref": "ee609429c9ee23e22d6fa5728211768f51ed2818"
         },
         "files": [
+<<<<<<< HEAD
+            "config/packages/doctrine_migrations.yaml",
+            "migrations/.gitignore"
+=======
+<<<<<<< HEAD
+            "config/packages/doctrine_migrations.yaml",
+            "migrations/.gitignore"
+=======
             "./config/packages/doctrine_migrations.yaml",
             "./migrations/.gitignore"
+>>>>>>> 64404a614e1f5626b44336b6b93d00306ada3e83
+>>>>>>> 6615a31123908b8b95ff5cdaaf807ed53fd28ad1
         ]
     },
     "doctrine/event-manager": {
@@ -92,9 +120,15 @@
     "doctrine/sql-formatter": {
         "version": "1.1.2"
     },
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+=======
     "egulias/email-validator": {
         "version": "3.1.2"
     },
+>>>>>>> 64404a614e1f5626b44336b6b93d00306ada3e83
+>>>>>>> 6615a31123908b8b95ff5cdaaf807ed53fd28ad1
     "friendsofphp/proxy-manager-lts": {
         "version": "v1.0.7"
     },
@@ -216,6 +250,10 @@
     "symfony/http-kernel": {
         "version": "v5.4.6"
     },
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+=======
     "symfony/mailer": {
         "version": "5.4",
         "recipe": {
@@ -228,6 +266,8 @@
             "./config/packages/mailer.yaml"
         ]
     },
+>>>>>>> 64404a614e1f5626b44336b6b93d00306ada3e83
+>>>>>>> 6615a31123908b8b95ff5cdaaf807ed53fd28ad1
     "symfony/maker-bundle": {
         "version": "1.38",
         "recipe": {
@@ -237,6 +277,16 @@
             "ref": "fadbfe33303a76e25cb63401050439aa9b1a9c7f"
         }
     },
+<<<<<<< HEAD
+    "symfony/options-resolver": {
+        "version": "v5.4.3"
+    },
+=======
+<<<<<<< HEAD
+    "symfony/options-resolver": {
+        "version": "v5.4.3"
+    },
+=======
     "symfony/mime": {
         "version": "v5.4.3"
     },
@@ -246,15 +296,23 @@
     "symfony/password-hasher": {
         "version": "v5.4.3"
     },
+>>>>>>> 64404a614e1f5626b44336b6b93d00306ada3e83
+>>>>>>> 6615a31123908b8b95ff5cdaaf807ed53fd28ad1
     "symfony/polyfill-intl-grapheme": {
         "version": "v1.25.0"
     },
     "symfony/polyfill-intl-icu": {
         "version": "v1.25.0"
     },
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+=======
     "symfony/polyfill-intl-idn": {
         "version": "v1.25.0"
     },
+>>>>>>> 64404a614e1f5626b44336b6b93d00306ada3e83
+>>>>>>> 6615a31123908b8b95ff5cdaaf807ed53fd28ad1
     "symfony/polyfill-intl-normalizer": {
         "version": "v1.25.0"
     },
@@ -356,7 +414,15 @@
             "ref": "c32cfd98f714894c4f128bb99aa2530c1227603c"
         },
         "files": [
+<<<<<<< HEAD
+            "config/packages/validator.yaml"
+=======
+<<<<<<< HEAD
+            "config/packages/validator.yaml"
+=======
             "./config/packages/validator.yaml"
+>>>>>>> 64404a614e1f5626b44336b6b93d00306ada3e83
+>>>>>>> 6615a31123908b8b95ff5cdaaf807ed53fd28ad1
         ]
     },
     "symfony/var-dumper": {
