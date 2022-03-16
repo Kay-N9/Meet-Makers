@@ -17,4 +17,25 @@
         <li><a href="{{ path('project_regist')}}">Inscription-Track-Mec</a></li>
     </ul>
 </div>
+    
+</div>
+
+<div class="container">
+    {% for repoProject in projectbyStatusVote %}
+        <div class="row">
+            <div class="col order-last">
+                <div class="card" style="width: 18rem;">
+                    <img src="https://fr.web.img4.acsta.net/r_1920_1080/pictures/22/03/03/15/50/2634051.jpg" class="card-img-top" alt="..." width="400">
+                        <div class="card-body">
+                            <h5 class="card-title">{{repoProject.ProjectName}}</h5>
+                            <p class="card-text">..</p>
+                            <a href="#" class="btn btn-primary">En savoir plus</a>
+                        </div>
+                </div>    
+            </div>
+        </div>
+    {% endfor %}
+</div>
+
+
 {% endblock %}
