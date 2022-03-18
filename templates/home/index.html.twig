@@ -1,6 +1,6 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Hello HomeController!{% endblock %}
+{% block title %}Hello{% endblock %}
 
 {% block body %}
 <style>
@@ -9,12 +9,18 @@
 </style>
 
 <div class="example-wrapper">
-    <h1>Hello {{ controller_name }}! ✅</h1>
+    <h1>Hello! ✅</h1>
+    <header>
+        <nav class="log-nav">
 
-    This friendly message is coming from:
-    <ul>
-        <li><a href="{{ path('project_log')}}">Connection-Track-Mec</a></li>
-        <li><a href="{{ path('project_registery')}}">Inscription-Track-Mec</a></li>
-    </ul>
+            {% if is_granted('ROLE_USER') %}
+                <a href="{{ path('project_user')}}"><p>Bonjour {{ app.user.nickname }}</p></a>
+                <a href="{{ path('project_logout')}}">Déconnection-Track-Mec</a>
+            {% else %}
+               <li><a href="{{ path('project_log')}}">Connection-Track-Mec</a></li>
+                <li><a href="{{ path('project_registery')}}">Inscription-Track-Mec</a></li>
+            {% endif %}
+        </nav>
+    </header>
 </div>
 {% endblock %}
