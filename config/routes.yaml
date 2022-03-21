@@ -25,6 +25,13 @@ project_logout:
    controller: App\Controller\SecurityController::logout
 
 project_user:
-   path: /user
-   controller: App\Controller\UserController::index
+   path: /user/{idUser}
+   controller: App\Controller\UserController::show
 
+project_rech:
+   path: /api_data
+   controller: App\Controller\ApiController::getData
+
+project_create_project:
+   path: /creation_projet
+   controller: App\Controller\ProjectController::index

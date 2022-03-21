@@ -90,6 +90,11 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
      */
     private $voteInfo;
 
+    /**
+     * @ORM\ManyToMany(targetEntity=Category::class, inversedBy="users")
+     */
+    private $categories;
+
 
     public function __construct()
     {
@@ -97,6 +102,7 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
         $this->style = new ArrayCollection();
         $this->reseaux = new ArrayCollection();
         $this->voteInfo = new ArrayCollection();
+        $this->categories = new ArrayCollection();
     }
 
     public function getId(): ?int
@@ -358,6 +364,30 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
                 $voteInfo->setUser(null);
             }
         }
+
+        return $this;
+    }
+
+    /**
+     * @return Collection<int, Category>
+     */
+    public function getCategories(): Collection
+    {
+        return $this->categories;
+    }
+
+    public function addCategory(Category $category): self
+    {
+        if (!$this->categories->contains($category)) {
+            $this->categories[] = $category;
+        }
+
+        return $this;
+    }
+
+    public function removeCategory(Category $category): self
+    {
+        $this->categories->removeElement($category);
 
         return $this;
     }

@@ -85,6 +85,21 @@ class RegistrationController extends AbstractController
             if($type == 'rapide'){
                 $user->setUserType($userTypeRepository->find(1));
             }
+           
+            switch ($user->getUserType()->getId()) {
+                // case 1:
+                //     user->setRoles(["ROLE_USER", "ROLE_MUS"]);
+                //     break;
+                case 2:
+                    $user->setRoles(["ROLE_USER", "ROLE_MUSE"]);
+                    break;
+                case 3:
+                    $user->setRoles(["ROLE_USER", "ROLE_MAKER"]);
+                    break;
+            }
+            // if(2 == $user->getUserType()->getId()){
+            //     $user->setRoles(["ROLE_USER", "ROLE_MAKER"]);
+            // }
 
             $entityManager->persist($user);
             $entityManager->flush();

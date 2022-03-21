@@ -29,10 +29,6 @@ class UserType
      */
     private $users;
 
-    /**
-     * @ORM\Column(type="boolean")
-     */
-    private $is_visible;
 
     public function __construct()
     {
@@ -82,18 +78,6 @@ class UserType
                 $user->setUserType(null);
             }
         }
-
-        return $this;
-    }
-
-    public function getIsVisible(): ?bool
-    {
-        return $this->is_visible;
-    }
-
-    public function setIsVisible(bool $is_visible): self
-    {
-        $this->is_visible = $is_visible;
 
         return $this;
     }
