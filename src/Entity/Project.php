@@ -25,17 +25,18 @@ class Project
     private $dateLancement;
 
     /**
-     * @ORM\Column(type="string", length=255)
+     * @ORM\Column(type="string", length=255, nullable=true)
      */
+
     private $uploadProject;
 
     /**
-     * @ORM\Column(type="string", length=255)
+     * @ORM\Column(type="string", length=255, nullable=true)
      */
     private $uploadPicture;
 
     /**
-     * @ORM\Column(type="float")
+     * @ORM\Column(type="float", nullable=true)
      */
     private $budget;
 
@@ -56,7 +57,7 @@ class Project
     private $candidates;
 
     /**
-     * @ORM\Column(type="string", length=255)
+     * @ORM\Column(type="string", length=255, nullable=true)
      */
     private $projectName;
 
@@ -70,6 +71,16 @@ class Project
      * @ORM\ManyToMany(targetEntity=Category::class, inversedBy="projects")
      */
     private $style;
+
+    /**
+     * @ORM\Column(type="text", nullable=true)
+     */
+    private $Description;
+
+    /**
+     * @ORM\Column(type="string", length=255, nullable=true)
+     */
+    private $TrackTitle;
 
 
 
@@ -227,6 +238,30 @@ class Project
     public function removeStyle(Category $style): self
     {
         $this->style->removeElement($style);
+
+        return $this;
+    }
+
+    public function getDescription(): ?string
+    {
+        return $this->Description;
+    }
+
+    public function setDescription(string $Description): self
+    {
+        $this->Description = $Description;
+
+        return $this;
+    }
+
+    public function getTrackTitle(): ?string
+    {
+        return $this->TrackTitle;
+    }
+
+    public function setTrackTitle(string $TrackTitle): self
+    {
+        $this->TrackTitle = $TrackTitle;
 
         return $this;
     }

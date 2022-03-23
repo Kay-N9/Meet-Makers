@@ -9,13 +9,12 @@
 </style>
 
 <div class="example-wrapper">
-    <h1>Hello ! ✅</h1>
-
-    {{ form_start(form)}}
-
-        {{ form_row(form)}}
-        <button type="submit" class="btn">Suivant</button>
-    {{ form_end(form) }}
+    <h1> Yoh {{ app.user.nickname}}!</h1>
      
+     <p>
+        Ton projet sera en ligne et ouvert à la candidature ce Samedi. 
+     </p>
+
+     <a href="{{ path('project_main_home')}}">K'</a>
 </div>
 {% endblock %}
