@@ -108,9 +108,10 @@ class ProjectController extends AbstractController
 
             // dd($project);
         
-            $filesystem = new Filesystem();
+        
 
-            $file = $form->get('uploadProject')->getData();
+            $sond = $form->get('uploadProject')->getData();
+            
 
             $em = $this->doctrine->getManager();
 
