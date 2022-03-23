@@ -27,11 +27,26 @@ project_logout:
 project_user:
    path: /user/{idUser}
    controller: App\Controller\UserController::show
-
+   requirements:
+     idArticle: '\d+'
 project_rech:
    path: /api_data
    controller: App\Controller\ApiController::getData
 
+########################################################### MUSE #####################################################
+
 project_create_project:
    path: /creation_projet
    controller: App\Controller\ProjectController::index
+
+project_create_project_middle:
+   path: /creation_projet_part2/{idProject}
+   controller: App\Controller\ProjectController::index2
+   requirements:
+     idArticle: '\d+'
+
+project_project_confirmation:
+   path: /confirmaion/{idProject}
+   controller: App\Controller\ProjectController::Confirmation
+   requirements:
+     idArticle: '\d+'

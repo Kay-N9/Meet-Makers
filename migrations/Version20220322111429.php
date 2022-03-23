@@ -10,7 +10,7 @@ use Doctrine\Migrations\AbstractMigration;
 /**
  * Auto-generated Migration: Please modify to your needs!
  */
-final class Version20220321103330 extends AbstractMigration
+final class Version20220322111429 extends AbstractMigration
 {
     public function getDescription(): string
     {
@@ -20,7 +20,7 @@ final class Version20220321103330 extends AbstractMigration
     public function up(Schema $schema): void
     {
         // this up() migration is auto-generated, please modify it to your needs
-
+        $this->addSql('ALTER TABLE project ADD description LONGTEXT NOT NULL');
     }
 
     public function down(Schema $schema): void
@@ -28,7 +28,7 @@ final class Version20220321103330 extends AbstractMigration
         // this down() migration is auto-generated, please modify it to your needs
         $this->addSql('ALTER TABLE candidate CHANGE description description LONGTEXT DEFAULT NULL COLLATE `utf8mb4_unicode_ci`, CHANGE upload upload VARCHAR(255) NOT NULL COLLATE `utf8mb4_unicode_ci`');
         $this->addSql('ALTER TABLE category CHANGE name name VARCHAR(255) NOT NULL COLLATE `utf8mb4_unicode_ci`');
-        $this->addSql('ALTER TABLE project CHANGE upload_project upload_project VARCHAR(255) NOT NULL COLLATE `utf8mb4_unicode_ci`, CHANGE upload_picture upload_picture VARCHAR(255) NOT NULL COLLATE `utf8mb4_unicode_ci`, CHANGE project_name project_name VARCHAR(255) NOT NULL COLLATE `utf8mb4_unicode_ci`');
+        $this->addSql('ALTER TABLE project DROP description, CHANGE upload_project upload_project VARCHAR(255) NOT NULL COLLATE `utf8mb4_unicode_ci`, CHANGE upload_picture upload_picture VARCHAR(255) NOT NULL COLLATE `utf8mb4_unicode_ci`, CHANGE project_name project_name VARCHAR(255) NOT NULL COLLATE `utf8mb4_unicode_ci`');
         $this->addSql('ALTER TABLE reseaux CHANGE name name VARCHAR(255) DEFAULT NULL COLLATE `utf8mb4_unicode_ci`');
         $this->addSql('ALTER TABLE status CHANGE name name VARCHAR(255) NOT NULL COLLATE `utf8mb4_unicode_ci`');
         $this->addSql('ALTER TABLE type_de_services CHANGE name name VARCHAR(255) DEFAULT NULL COLLATE `utf8mb4_unicode_ci`');

@@ -69,6 +69,7 @@ class RegistrationController extends AbstractController
                         'choice_label' =>'name',
                         'expanded'=> true, 
                         'multiple'=> false,
+                        'required'=> true,
                     ],
                 );
         }
