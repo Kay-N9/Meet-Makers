@@ -6,13 +6,16 @@
  */
 
 // any CSS you import will output into a single css file (app.css in this case)
-import './styles/app.css';
+// import './styles/app.css';
 import React from 'react';
 import ReactDOM from 'react-dom';
-import {App} from './component/App';
+import { App } from './component/App';
 
-let reacRoot = document.getElementById("root");
-if(reacRoot!= undefined)
-{
-    ReactDOM.render(<App />, reacRoot);
-}
+let reactRoot = document.getElementById('root');
+
+// Est-ce qu'il y'a une balise avec id root pour démarrer React ?
+
+// if(reactRoot != undefined)
+    ReactDOM.render(<App />, reactRoot);
+
+     

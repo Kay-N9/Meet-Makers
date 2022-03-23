@@ -30,11 +30,6 @@ class Candidate
     private $upload;
 
     /**
-     * @ORM\Column(type="integer", nullable=true)
-     */
-    private $voteNumber;
-
-    /**
      * @ORM\OneToOne(targetEntity=User::class, cascade={"persist", "remove"})
      */
     private $userInfo;
@@ -43,6 +38,11 @@ class Candidate
      * @ORM\ManyToMany(targetEntity=Project::class, inversedBy="candidates")
      */
     private $projectName;
+
+    /**
+     * @ORM\OneToOne(targetEntity=Vote::class, cascade={"persist", "remove"})
+     */
+    private $voteNumber;
 
     public function __construct()
     {
@@ -74,18 +74,6 @@ class Candidate
     public function setUpload(string $upload): self
     {
         $this->upload = $upload;
-
-        return $this;
-    }
-
-    public function getVoteNumber(): ?int
-    {
-        return $this->voteNumber;
-    }
-
-    public function setVoteNumber(?int $voteNumber): self
-    {
-        $this->voteNumber = $voteNumber;
 
         return $this;
     }
@@ -122,6 +110,18 @@ class Candidate
     public function removeProjectName(Project $projectName): self
     {
         $this->projectName->removeElement($projectName);
+
+        return $this;
+    }
+
+    public function getVoteNumber(): ?Vote
+    {
+        return $this->voteNumber;
+    }
+
+    public function setVoteNumber(?Vote $voteNumber): self
+    {
+        $this->voteNumber = $voteNumber;
 
         return $this;
     }

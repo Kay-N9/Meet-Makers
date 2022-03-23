@@ -40,12 +40,12 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
     private $password;
 
     /**
-     * @ORM\Column(type="string", length=255)
+     * @ORM\Column(type="string", length=255, nullable=true)
      */
     private $firstName;
 
     /**
-     * @ORM\Column(type="string", length=255)
+     * @ORM\Column(type="string", length=255, nullable=true)
      */
     private $lastName;
 
@@ -55,7 +55,7 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
     private $nickname;
 
     /**
-     * @ORM\Column(type="string", length=255)
+     * @ORM\Column(type="string", length=255, nullable=true)
      */
     private $city;
 
@@ -75,11 +75,34 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
      */
     private $isVerified = true;
 
+    /**
+     * @ORM\Column(type="string", length=255, nullable=true)
+     */
+    private $profilePicture;
+
+    /**
+     * @ORM\OneToMany(targetEntity=Reseaux::class, mappedBy="user")
+     */
+    private $reseaux;
+
+    /**
+     * @ORM\OneToMany(targetEntity=Vote::class, mappedBy="user")
+     */
+    private $voteInfo;
+
+    /**
+     * @ORM\ManyToMany(targetEntity=Category::class, inversedBy="users")
+     */
+    private $categories;
+
 
     public function __construct()
     {
         $this->projects = new ArrayCollection();
         $this->style = new ArrayCollection();
+        $this->reseaux = new ArrayCollection();
+        $this->voteInfo = new ArrayCollection();
+        $this->categories = new ArrayCollection();
     }
 
     public function getId(): ?int
@@ -272,5 +295,102 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
 
         return $this;
     }
+
+    public function getProfilePicture(): ?string
+    {
+        return $this->profilePicture;
+    }
+
+    public function setProfilePicture(?string $profilePicture): self
+    {
+        $this->profilePicture = $profilePicture;
+
+        return $this;
+    }
+
+    /**
+     * @return Collection<int, Reseaux>
+     */
+    public function getReseaux(): Collection
+    {
+        return $this->reseaux;
+    }
+
+    public function addReseaux(Reseaux $reseaux): self
+    {
+        if (!$this->reseaux->contains($reseaux)) {
+            $this->reseaux[] = $reseaux;
+            $reseaux->setUser($this);
+        }
+
+        return $this;
+    }
+
+    public function removeReseaux(Reseaux $reseaux): self
+    {
+        if ($this->reseaux->removeElement($reseaux)) {
+            // set the owning side to null (unless already changed)
+            if ($reseaux->getUser() === $this) {
+                $reseaux->setUser(null);
+            }
+        }
+
+        return $this;
+    }
+
+    /**
+     * @return Collection<int, Vote>
+     */
+    public function getVoteInfo(): Collection
+    {
+        return $this->voteInfo;
+    }
+
+    public function addVoteInfo(Vote $voteInfo): self
+    {
+        if (!$this->voteInfo->contains($voteInfo)) {
+            $this->voteInfo[] = $voteInfo;
+            $voteInfo->setUser($this);
+        }
+
+        return $this;
+    }
+
+    public function removeVoteInfo(Vote $voteInfo): self
+    {
+        if ($this->voteInfo->removeElement($voteInfo)) {
+            // set the owning side to null (unless already changed)
+            if ($voteInfo->getUser() === $this) {
+                $voteInfo->setUser(null);
+            }
+        }
+
+        return $this;
+    }
+
+    /**
+     * @return Collection<int, Category>
+     */
+    public function getCategories(): Collection
+    {
+        return $this->categories;
+    }
+
+    public function addCategory(Category $category): self
+    {
+        if (!$this->categories->contains($category)) {
+            $this->categories[] = $category;
+        }
+
+        return $this;
+    }
+
+    public function removeCategory(Category $category): self
+    {
+        $this->categories->removeElement($category);
+
+        return $this;
+    }
+
 
 }

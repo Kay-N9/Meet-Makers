@@ -23,6 +23,7 @@
 </head>               
 
 		<!------------------------ DEBUT NAVBAR ------------------------>
+
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top" id="nav">
         <div class="container">
             <a class="navbar-brand" href="#">
@@ -69,6 +70,25 @@
                 </div>
             </div>
         </div>
+
+		<nav class="log-nav">
+            
+                <li id="root"></li>
+            {% if is_granted('ROLE_USER') %}
+                <a href="{{ path('project_user', {idUser:app.user.id})}}"><p>Bonjour {{ app.user.nickname }}</p></a>
+                <li><a href="{{ path('project_logout')}}">Déconnection-Track-Mec</a></li>
+
+            {% endif %}
+            {% if is_granted('ROLE_MUSE') %}       
+                <li><a href="{{ path('project_create_project')}}">Crea-Track-Mec</a></li>
+
+            {% else %}    
+               <li><a href="{{ path('project_log')}}">Connection-Track-Mec</a></li>
+                <li><a href="{{ path('project_registery')}}">Inscription-Track-Mec</a></li>
+                
+            {% endif %}
+        </nav>
+
     </nav>
 
 			{% block title %}
