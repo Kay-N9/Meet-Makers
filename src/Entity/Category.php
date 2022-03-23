@@ -29,6 +29,11 @@ class Category
      */
     private $projects;
 
+    /**
+     * @ORM\ManyToMany(targetEntity=User::class, mappedBy="categories")
+     */
+    private $users;
+
     public function __construct()
     {
         $this->users = new ArrayCollection();
@@ -74,6 +79,33 @@ class Category
     {
         if ($this->projects->removeElement($project)) {
             $project->removeStyle($this);
+        }
+
+        return $this;
+    }
+
+    /**
+     * @return Collection<int, User>
+     */
+    public function getUsers(): Collection
+    {
+        return $this->users;
+    }
+
+    public function addUser(User $user): self
+    {
+        if (!$this->users->contains($user)) {
+            $this->users[] = $user;
+            $user->addCategory($this);
+        }
+
+        return $this;
+    }
+
+    public function removeUser(User $user): self
+    {
+        if ($this->users->removeElement($user)) {
+            $user->removeCategory($this);
         }
 
         return $this;

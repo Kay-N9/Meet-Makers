@@ -1,6 +1,6 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Hello HomeController!{% endblock %}
+{% block title %}Hello{% endblock %}
 
 {% block body %}
 <style>
@@ -8,14 +8,30 @@
     .example-wrapper code { background: #F5F5F5; padding: 2px 6px; }
 </style>
 
-<div class="example-wrapper">
-    <h1>Hello {{ controller_name }}! ✅</h1>
 
-    This friendly message is coming from:
-    <ul>
-        <li><a href="{{ path('project_log')}}">Connection-Track-Mec</a></li>
-        <li><a href="{{ path('project_regist')}}">Inscription-Track-Mec</a></li>
-    </ul>
+
+<div class="example-wrapper" >
+    
+    <header>
+        <nav class="log-nav">
+            <h1>Hello! ✅</h1>
+            
+                <li id="root"></li>
+            {% if is_granted('ROLE_USER') %}
+                <a href="{{ path('project_user', {idUser:app.user.id})}}"><p>Bonjour {{ app.user.nickname }}</p></a>
+                <li><a href="{{ path('project_logout')}}">Déconnection-Track-Mec</a></li>
+
+            {% endif %}
+            {% if is_granted('ROLE_MUSE') %}       
+                <li><a href="{{ path('project_create_project')}}">Crea-Track-Mec</a></li>
+
+            {% else %}    
+               <li><a href="{{ path('project_log')}}">Connection-Track-Mec</a></li>
+                <li><a href="{{ path('project_registery')}}">Inscription-Track-Mec</a></li>
+                
+            {% endif %}
+        </nav>
+    </header>
 </div>
     
 </div>
