@@ -1,0 +1,507 @@
+/************************************* IMPORT TYPO *************************************/
+
+/***** Bebas Neue *****/
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
+
+/***** Proxima regular *****/
+@font-face {
+    font-family: 'Proxima-Nova-Regular';
+    src: url(../font/Proxima-Nova/regular/Proxima-Nova-Regular.otf) format("opentype"),
+        url(../font/Proxima-Nova/regular/Proxima-Nova-Regular.ttf) format("truetype"),
+        url(../font/Proxima-Nova/regular/Proxima-Nova-Regular.woff) format("woff");
+}
+
+/***** Proxima bold *****/
+@font-face {
+    font-family: 'Proxima-Nova-Bold';
+    src: url(../font/Proxima-Nova/bold/Proxima-Nova-Bold.otf) format("opentype"),
+        url(../font/Proxima-Nova/bold/Proxima-Nova-Bold.ttf) format("truetype"),
+        url(../font/Proxima-Nova/bold/Proxima-Nova-Bold.woff2) format("woff2");
+}
+
+/***** Good brush *****/
+@font-face {
+    font-family: 'Good-Brush';
+    src: url(../font/Good-Brush/Good-Brush.otf) format("opentype"),
+        url(../font/Good-Brush/Good-Brush.ttf) format("truetype"),
+        url(../font/Good-Brush/Good-Brush.woff) format("woff");
+}
+
+/***** Digital Number *****/
+@font-face {
+    font-family: 'Digital-Number';
+    src: url(../font/Digital-Number/Digital-Numbers-Regular.ttf) format("truetype"),
+        url(../font/Digital-Number/Digital-Numbers-Regular.woff) format("woff");
+}
+
+/************************************* GENERAL *************************************/
+
+/*********** Variables ***********/
+:root {
+    /** couleurs **/
+    --meet-white: #FBF7FB;
+    --meet-black: #1c0f22;
+    --meet-dark-purple: #31193C;
+    --meet-purple: #7836CC;
+    --meet-light-purple: #D2A3FF;
+    --meet-blue: #5322E0;
+    --meet-pink: #E926BE;
+    --meet-orange: #ef6b0b;
+    --meet-light-orange: #f3a242;
+    /* degrades */
+    --meet-orange-gradient: linear-gradient(45deg, #ef6b0b, #f3a242);
+    --meet-purple-gradient: linear-gradient(45deg, #8C35DD, #5322E0);
+    --meet-pink-gradient: linear-gradient(-45deg, rgba(10, 28, 125, 0.8), rgba(245, 31, 250, .8));
+}
+
+/*///// ! Privilégiez l'utilisation des variables pour éviter les erreurs /////*/
+
+/*********** Début modif couleurs bootstrap ***********/
+.text-white {
+    color: var(--meet-white) !important;
+}
+/*********** Fin modif couleurs bootstrap ***********/
+
+/*********** Début modif radius ***********/
+.rounded-3 {
+    border-radius: 10px !important;
+}
+/*********** Fin modif radius ***********/
+
+/*********** Début général ***********/
+html {
+    font-size: 62.5%;
+    /* font-size=1rem=10px*/
+}
+
+body {
+    background: url(../img/background.jpg) no-repeat;
+}
+
+/*********** Fin général ***********/
+
+/************************************* TYPOS *************************************/
+nav a,
+.boutons-registration,
+#bouton-voir-projet {
+    font-family: 'Bebas Neue';
+    font-size: 2.3rem;
+}
+
+.filet-titres {
+    height: 4px;
+    width: 80%;
+    max-width: 300px;
+    background-color: var(--meet-white);
+}
+
+.chevron-titre {
+    vertical-align: baseline;
+}
+
+h1,
+h2,
+h3 {
+    font-family: 'Bebas Neue';
+}
+
+h1 {
+    font-size: 4rem;
+}
+
+h2 {
+    font-size: 3.2rem;
+}
+
+h3 {
+    font-size: 2.7rem;
+}
+
+h4,
+h5,
+h6 {
+    font-family: 'Proxima-Nova-Bold';
+}
+
+h4 {
+    font-size: 2rem;
+}
+
+h5 {
+    font-size: 1.8rem;
+}
+
+h5 {
+    font-size: 1.6rem;
+}
+
+/************************************* CARDS *************************************/
+/*#carte-spotlight {
+}*/
+
+.card {
+    width: 390px;
+    height: 485px;
+    background-color: red;
+    border: 0;
+    box-shadow: 0 0 15px 4px rgba(120, 54, 204, 0.6);
+}
+
+#spotlight .titre-card {
+    font-family: 'Bebas Neue';
+    font-size: 3.6rem;
+}
+
+#spotlight .text-card {
+    font-family: 'Proxima-Nova-Regular';
+    font-size: 2.3rem;
+}
+
+/*#card1{
+    background-image: url(../img/artiste-12.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    border-radius: 10px;
+    max-width: 350px;
+}*/
+
+/************************************* IMAGES *************************************/
+
+/************************************* BOUTONS *************************************/
+
+/*********** Boutons Général ***********/
+.btn:focus,
+.btn:active {
+    box-shadow: none;
+}
+
+.btn-outline-light:active {
+    background-color: unset;
+}
+
+/*********** Fin Boutons Général ***********/
+
+/*********** Boutons Navbar ***********/
+.boutons-registration>button,
+#bouton-voir-projet {
+    font-size: 2.3rem;
+    margin-right: 1vw;
+}
+
+/*********** Boutons inscription ***********/
+#bouton-registration,
+#bouton-voir-projet {
+    color: var(--meet-orange);
+    border: 3px solid;
+    box-shadow: 0 0 1rem rgba(243, 162, 66, 0.5);
+}
+
+#bouton-registration.btn-outline-primary:hover,
+#bouton-voir-projet.btn-outline-primary:hover {
+    background-color: var(--meet-orange);
+    color: var(--meet-white);
+    border: 3px var(--meet-orange) solid;
+}
+
+#bouton-login.btn-outline-secondary {
+    border: 0px;
+}
+
+#bouton-login.btn-outline-secondary:hover {
+    background-color: unset;
+    opacity: 0.8;
+}
+
+/*********** Menu burger ***********/
+#nav .navbar-toggler {
+    border: none;
+    font-size: 1.8rem;
+}
+
+#nav .navbar-toggler-icon {
+    background-image: url(../icones/icone-burger.svg);
+}
+
+#nav .navbar-toggler:focus {
+    text-decoration: none;
+    outline: 0;
+    box-shadow: none;
+}
+
+/*********** Fin Boutons Navbar ***********/
+
+/*********** Voir + ***********/
+#bouton-voir-plus {
+    font-family: 'Proxima-Nova-Regular';
+    text-decoration: none;
+    display: none;
+}
+
+/*********** Boutons nav secondaire (projets clos, candidatures ouvertes, votes ouverts) ***********/
+#bouton-projets-clos-gauche,
+#bouton-projets-clos-droit,
+#bouton-candidatures-ouvertes-gauche,
+#bouton-candidatures-ouvertes-droit,
+#bouton-votes-ouverts-gauche,
+#bouton-votes-ouverts-droit {
+    font-family: 'Proxima-Nova-Regular';
+    text-decoration: none;
+    opacity: 0.5;
+}
+
+#bouton-projets-clos-droit::after,
+#bouton-candidatures-ouvertes-droit::after,
+#bouton-votes-ouverts-droit::after {
+    /* chevron vers la droite */
+    content: url(../icones/icone-chevron-droit.svg);
+    vertical-align: middle;
+    margin-left: .255em;
+}
+
+#bouton-projets-clos-gauche::before,
+#bouton-candidatures-ouvertes-gauche::before,
+#bouton-votes-ouverts-gauche::before {
+    /* chevron vers la gauche */
+    content: url(../icones/icone-chevron-gauche.svg);
+    vertical-align: middle;
+    margin-right: .255em;
+}
+
+#bouton-projets-clos-gauche:hover,
+#bouton-projets-clos-droit:hover,
+#bouton-candidatures-ouvertes-gauche:hover,
+#bouton-candidatures-ouvertes-droit:hover,
+#bouton-votes-ouverts-gauche:hover,
+#bouton-votes-ouverts-droit:hover {
+    opacity: 1;
+}
+
+/*********** Boutons Ajouter+ - Modifier ***********/
+#bouton-ajouter,
+#bouton-modifier {
+    font-family: 'Proxima-Nova-Regular';
+}
+
+/*********** Boutons Suivant - Précédent - Valider ***********/
+#bouton-suivant,
+#bouton-precedent,
+#bouton-valider {
+    font-family: 'Bebas Neue';
+}
+
+.chevron-bouton-suivant {
+    stroke: var(--meet-orange);
+}
+
+#bouton-suivant {
+    color: var(--meet-orange);
+}
+
+#bouton-valider {
+    background-image: var(--meet-orange-gradient);
+}
+
+#bouton-suivant:hover,
+#bouton-precedent:hover,
+#bouton-valider:hover {
+    scale: 1.1;
+    transition: all 0.5s;
+}
+
+/*********** Deviens Maker ***********/
+#bouton-deviens-maker {
+    font-family: 'Bebas Neue';
+    background-image: var(--meet-orange-gradient);
+}
+
+/************************************* TAGS *************************************/
+
+/*********** Musicien - Vidéaste ***********/
+#tag-musicien,
+#tag-videaste {
+    background-image: var(--meet-purple-gradient);
+}
+
+/*********** Style musique ***********/
+.tag {
+    display: inline-block;
+    font-family: 'Bebas Neue';
+    width: 8vw;
+    min-width: 100px;
+}
+
+#tag-style-hiphop,
+#tag-style-trap,
+#tag-style-tripop {
+    background-image: var(--meet-purple-gradient);
+}
+
+#tag-style-hiphop-dark,
+#tag-style-trap-dark,
+#tag-style-tripop-dark {
+    background-color: var(--meet-black);
+}
+
+/************************************* FIN TAGS *************************************/
+
+/************************************* NAVBARRE *************************************/
+#nav #logo-nav {
+    height: 65px;
+}
+
+#nav.bg-dark {
+    background-color: var(--meet-black) !important;
+}
+
+#nav .dropdown-menu {
+    background-color: var(--meet-dark-purple);
+    border: 1px solid rgba(0, 0, 0, .15);
+    border-radius: 0 0 2rem 2rem;
+}
+
+#nav .dropdown-item {
+    font-size: 2rem;
+}
+
+#nav .dropdown-item:hover {
+    background-color: unset;
+    opacity: 0.8;
+}
+
+#nav .dropdown-toggle::after {
+    content: url(../icones/icone-chevron-bas.svg);
+    border: none;
+    vertical-align: middle;
+}
+
+#nav .dropdown-toggle::after {
+    content: url(../icones/icone-chevron-bas.svg);
+    border: none;
+    vertical-align: middle;
+}
+
+/************************************* HEADER *************************************/
+
+/*********** Héroshot / Timer ***********/
+#header {
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0)), url(../img/heroshot-timer.png) no-repeat left center;
+    height: 556px;
+    /*padding: 8% 0;*/
+    padding: 5% 0;
+}
+
+#header p {
+    font-family: 'Bebas Neue';
+    font-size: 2.3rem;
+}
+
+#header .timer-flex {
+    padding-bottom: 6%;
+}
+
+#header .timer-nombre {
+    font-family: 'Digital-Number';
+    font-size: 9rem;
+}
+
+#header .taille-heure {
+    font-size: 2.7rem;
+}
+
+/*********** Héroshot / Timer - RESPONSIVE ***********/
+@media (max-width: 575.98px) {
+
+    /*********** Header ***********/
+    #header {
+        margin-top: -13%;
+        padding-top: 20%;
+    }
+
+    /*********** Héroshot / Timer ***********/
+    #header .timer-nombre {
+        font-family: 'Digital-Number';
+        font-size: 6rem;
+    }
+
+    #header .taille-heure {
+        font-size: 2rem;
+    }
+
+    #header .cloture-vote h3,
+    #header .cloture-candidature h3 {
+        font-size: 2.5rem;
+    }
+
+    #header .taille-vague {
+        font-size: 2rem;
+    }
+}
+
+/*********** FIN RESPONSIVE ***********/
+
+/*********** Fin Héroshot / Timer ***********/
+
+/************************************* FIN HEADER *************************************/
+
+/************************************* MAIN *************************************/
+/*********** Spotlight ***********/
+#spotlight p {
+    font-size: 1.6rem;
+}
+
+/*********** Votes ouverts - Candidatures ouvertes - Projets clos ***********/
+#votes-ouverts {
+    margin-top: 5%;
+}
+
+#candidatures-ouvertes {
+    margin: 5% 0;
+}
+
+.titres:hover #bouton-voir-plus {
+    display: inline-block;
+}
+
+.chevron-slider {
+    height: 4.8rem;
+}
+
+.slider-section {
+    background-image: linear-gradient(to left, rgba(28, 15, 34, 1), rgba(28, 15, 34, 0));
+    height: 485px;
+}
+
+.sections-contenant {
+    width: 1900px;
+    overflow-x: scroll;
+}
+
+.cards-projets {
+    flex-shrink: 0;
+    flex-basis: 390px;
+    height: 485px;
+    background-color: var(--meet-orange);
+}
+
+/************************************* FOOTER *************************************/
+#footer {
+    background-color: var(--meet-black);
+}
+
+#footer #logo-footer {
+    height: 80px;
+}
+
+#footer .social-network {
+    height: 40px;
+}
+
+#footer ul li {
+    font-family: 'Proxima-Nova-Regular';
+    font-size: 1.4rem;
+}
+
+#footer hr {
+    color: var(--meet-white);
+}

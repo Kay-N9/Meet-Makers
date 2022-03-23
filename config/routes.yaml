@@ -10,3 +10,4 @@ project_log:
 project_regist:
    path: /register
    controller: App\Controller\RegistrationController::register
+

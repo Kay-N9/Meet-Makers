@@ -1,16 +1,83 @@
-<!DOCTYPE html>
-<html>
-	<head>
-		<meta charset="UTF-8">
-		<title>
-			{% block title %}Welcome!
+<!doctype html>
+<html lang="fr">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+
+    <!-- Fichier CSS -->
+    <link rel="stylesheet" href={{asset('asset/css/style-index.css')}}>
+
+
+
+    <!-- Font Awesome-->
+    <script src="https://kit.fontawesome.com/0a79214c99.js" crossorigin="anonymous"></script>
+
+    <title>Meet Makers</title>
+</head>               
+
+		<!------------------------ DEBUT NAVBAR ------------------------>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top" id="nav">
+        <div class="container">
+            <a class="navbar-brand" href="#">
+                <img src="asset/img/logo-entier.png" alt="logo meet makers" id="logo-nav">
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse justify-content-between" id="navbarSupportedContent">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle ps-2 text-white" href="#" id="navbarDropdown" role="button"
+                            data-bs-toggle="dropdown" aria-expanded="false">
+                            Les projets
+                        </a>
+                        <ul class="dropdown-menu px-2" aria-labelledby="navbarDropdown">
+                            <li><a class="dropdown-item text-white" href="#">Les candidatures ouvertes</a></li>
+                            <li><a c!,0erts</a></li>
+                            <li><a class="dropdown-item text-white" href="#">Les projets clos</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item ps-3 dropdown">
+                        <a class="nav-link dropdown-toggle text-white" href="#" id="navbarDropdown" role="button"
+                            data-bs-toggle="dropdown" aria-expanded="false">
+                            Nos makers
+                        </a>
+                        <ul class="dropdown-menu px-2" aria-labelledby="navbarDropdown">
+                            <li><a class="dropdown-item text-white" href="#">Nos musiciens</a></li>
+                            <li><a class="dropdown-item text-white" href="#">Nos vidéastes</a></li>
+                        </ul>
+                    </li>
+                </ul>
+                <div id="nav-searchbar" class="text-white mx-3">
+                    <input type="checkbox" class="checkbox-searchbar mx-3">
+                </div>
+                <div class="boutons-registration d-flex">
+                    <button type="button" id="bouton-registration" class="btn btn-outline-primary">Je m'inscris</button>
+                    <!-- Quand makers connecté :
+                    <a href="#" id="profil-maker" class="mx-3"><img src="asset/icones/icone-user-casque.svg" class="me-3">Mon profil</a>
+                    <button type="button" id="bouton-login" class="btn btn-outline-secondary text-white">Je me déconnecte</button>-->
+                    <button type="button" id="bouton-login" class="btn btn-outline-secondary text-white">Je me connecte</button>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+			{% block title %}
 			{% endblock %}
 		</title>
 		<link
 		rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 128 128%22><text y=%221.2em%22 font-size=%2296%22>⚫️</text></svg>">
 		{# Run `composer require symfony/webpack-encore-bundle` to start using Symfony UX #}
+		{{ encore_entry_link_tags('app') }}
 		{% block stylesheets %}
-			{{ encore_entry_link_tags('app') }}
 		{% endblock %}
 
 		{% block javascripts %}
@@ -18,6 +85,80 @@
 		{% endblock %}
 	</head>
 	<body>
-		{% block body %}{% endblock %}
-	</body>
+
+
+		{% block body %}
+
+		{% endblock %}
+
+
+Ò
+		{% block footer %}
+
+
+
+	    <!------------------------ DEBUT FOOTER ------------------------>
+    <footer id="footer">
+        <div class="container py-3">
+            <div class="row row-cols-4 mt-5">
+                <div class="col-12 col-md-3">
+                    <a href="#" class="d-flex align-items-center mb-3 link-dark text-decoration-none">
+                        <img src="asset/img/logo-entier.png" alt="logo meet makers" id="logo-footer">
+                    </a>
+                    <div class="d-flex align-items-center">
+                        <a href="#" class="my-3 mx-3 link-dark text-decoration-none">
+                            <img src="asset/icones/icone-facebook.svg" alt="icone facebook" class="social-network">
+                        </a>
+                        <a href="#" class="my-3 mx-3 link-dark text-decoration-none">
+                            <img src="asset/icones/icone-twitter.svg" alt="icone twitter" class="social-network">
+                        </a>
+                        <a href="#" class="my-3 mx-3 link-dark text-decoration-none">
+                            <img src="asset/icones/icone-insta.svg" alt="icone instragram" class="social-network">
+                        </a>
+                    </div>
+                </div>
+
+                <div class="col-12 col-md-3 py-5 py-md-0 ps-5 ps-md-0">
+                    <h5 class="text-white">Meet Makers</h5>
+                    <ul class="nav flex-column">
+                        <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-white">À propos de nous</a></li>
+                        <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-white">Blog</a></li>
+                        <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-white">Carrière</a></li>
+                        <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-white">Nous contacter</a></li>
+                    </ul>
+                </div>
+
+                <div class="col-12 col-md-3 pb-2 pb-md-0 ps-5 ps-md-0">
+                    <h5 class="text-white">Légal</h5>
+                    <ul class="nav flex-column">
+                        <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-white">CGU</a></li>
+                        <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-white">Politique de
+                                confidentialité</a></li>
+                        <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-white">Ressources légales</a>
+                        </li>
+                        <li class="nav-item mb-2e"><a href="#" class="nav-link p-0 text-white">Mentions légales</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="offset-md-6 py-2">
+                <hr>
+                <p class="text-center text-white">Copyright © 2022 Meet Makers</p>
+            </div>
+        </div>
+    </footer>
+    <!------------------------ FIN FOOTER ------------------------>
+
+
+
+
+    <!-- Optional JavaScript; choose one of the two! -->
+
+    <!-- Option 1: Bootstrap Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous">
+    </script>
+</body>
+
 </html>
+
+{% endblock %}
