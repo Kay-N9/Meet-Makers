@@ -112,7 +112,8 @@ class ProjectController extends AbstractController
 
             $sond = $form->get('uploadProject')->getData();
 
-
+            $fichier = md5(uniqid()). '.'. $sond->guessExtension();
+            $sond->move();
             $em = $this->doctrine->getManager();
 
             $em->persist($project);
