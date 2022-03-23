@@ -111,9 +111,16 @@ class ProjectController extends AbstractController
         
 
             $sond = $form->get('uploadProject')->getData();
-
+            // On génère un nouveau nom de fichier
             $fichier = md5(uniqid()). '.'. $sond->guessExtension();
-            $sond->move();
+            // On copie le fichier dans le dossier uploads
+            $sond->move(
+                $this->getParameter('sond_directory'),
+                $fichier
+            );
+            // On stocke l'image dans la base de donée (son nom)
+            
+
             $em = $this->doctrine->getManager();
 
             $em->persist($project);
