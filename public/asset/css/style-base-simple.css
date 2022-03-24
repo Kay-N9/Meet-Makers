@@ -171,71 +171,14 @@ h5 {
 /************************************* BOUTONS *************************************/
 
 /*********** Boutons Général ***********/
-.btn:focus,
-.btn:active {
+.btn:focus, .btn:active {
     box-shadow: none;
 }
 
 .btn-outline-light:active {
     background-color: unset;
 }
-
-/*********** Fin Boutons Général ***********/
-
-/*********** Boutons Navbar ***********/
-.boutons-registration>button,
-#bouton-voir-projet {
-    font-size: 2.3rem;
-    margin-right: 1vw;
-}
-
-/*********** Boutons inscription ***********/
-#bouton-registration,
-#bouton-voir-projet {
-    color: var(--meet-orange);
-    border: 3px solid;
-    box-shadow: 0 0 1rem rgba(243, 162, 66, 0.5);
-}
-
-#bouton-registration.btn-outline-primary:hover,
-#bouton-voir-projet.btn-outline-primary:hover {
-    background-color: var(--meet-orange);
-    color: var(--meet-white);
-    border: 3px var(--meet-orange) solid;
-}
-
-#bouton-login.btn-outline-secondary {
-    border: 0px;
-}
-
-#bouton-login.btn-outline-secondary:hover {
-    background-color: unset;
-    opacity: 0.8;
-}
-
-/*********** Menu burger ***********/
-#nav .navbar-toggler {
-    border: none;
-    font-size: 1.8rem;
-}
-
-#nav .navbar-toggler-icon {
-    background-image: url(../icones/icone-burger.svg);
-}
-
-#nav .navbar-toggler:focus {
-    text-decoration: none;
-    outline: 0;
-    box-shadow: none;
-}
-
-/*********** Fin Boutons Navbar ***********/
-
-/*********** Voir + ***********/
-#bouton-voir-plus {
-    font-family: 'Proxima-Nova-Regular';
-    text-decoration: none;
-}
+/**********************/
 
 /*********** Boutons nav secondaire (projets clos, candidatures ouvertes, votes ouverts) ***********/
 #bouton-projets-clos-gauche,
@@ -245,6 +188,7 @@ h5 {
 #bouton-votes-ouverts-gauche,
 #bouton-votes-ouverts-droit {
     font-family: 'Proxima-Nova-Regular';
+    font-size: 1.8rem;
     text-decoration: none;
     opacity: 0.5;
 }
@@ -274,6 +218,42 @@ h5 {
 #bouton-votes-ouverts-gauche:hover,
 #bouton-votes-ouverts-droit:hover {
     opacity: 1;
+}
+
+/*********** Boutons Candidate ***********/
+#bouton-candidate{
+    font-family: 'Bebas Neue';
+    background-color: var(--meet-light-orange);
+    font-size: 1.8rem;
+}
+
+#bouton-candidate:hover{
+    background-image: var(--meet-orange-gradient);
+}
+
+/*********** Boutons Vote ***********/
+#bouton-vote{
+    font-family: 'Bebas Neue';
+    background-color: var(--meet-orange);
+    font-size: 1.8rem;
+}
+
+#bouton-vote:hover{
+    background-color: var(--meet-dark-purple);
+}
+
+/*********** Boutons Créer un projet ***********/
+#bouton-creer-projet{
+    font-family: 'Proxima-Nova-Bold';
+    background-image: var(--meet-purple-gradient);
+    font-size: 1.6rem;
+    text-transform: uppercase;
+    transition: ease-in-out;
+}
+
+#bouton-creer-projet:hover{
+    background-image: none;
+    background-color: var(--meet-blue);
 }
 
 /*********** Boutons Ajouter+ - Modifier ***********/
@@ -312,6 +292,36 @@ h5 {
 #bouton-deviens-maker {
     font-family: 'Bebas Neue';
     background-image: var(--meet-orange-gradient);
+}
+
+
+
+/*********** Boutons Navbar ***********/
+.boutons-registration>button, #bouton-voir-projet {
+    font-size: 2.2rem;
+    margin-right: 1vw;
+}
+
+/*********** Boutons inscription ***********/
+#bouton-registration, #bouton-voir-projet {
+    color: var(--meet-orange);
+    border: 3px solid;
+    box-shadow: 0 0 1rem rgba(243, 162, 66, 0.5);
+}
+
+#bouton-registration.btn-outline-primary:hover, #bouton-voir-projet.btn-outline-primary:hover {
+    background-color: var(--meet-orange);
+    color: var(--meet-white);
+    border: 3px var(--meet-orange) solid;
+}
+
+#bouton-login.btn-outline-secondary {
+    border: 0px;
+}
+
+#bouton-login.btn-outline-secondary:hover {
+    background-color: unset;
+    opacity: 0.8;
 }
 
 /************************************* TAGS *************************************/
@@ -377,13 +387,14 @@ h5 {
 }
 
 /*********** Searchbar ***********/
-.checkbox-searchbar{
+.checkbox-searchbar {
     display: block;
     order: 3;
     appearance: none;
     -moz-appearance: none;
     -webkit-appearance: none;
 }
+
 /* Quand on a pas cliqué sur la loupe */
 .checkbox-searchbar::before {
     font-family: "Font Awesome 5 Free";
@@ -412,6 +423,82 @@ h5 {
 #profil-maker {
     text-decoration: none;
     color: var(--meet-orange);
+}
+
+/******************* MODALE *******************/
+.modal-content {
+    display: flex;
+    flex-shrink: 0;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1rem 1rem;
+    border: 1px solid var(--meet-purple);
+    border-radius: 1.3rem;
+    background-color: var(--meet-black);
+    background-image: linear-gradient(-45deg, rgba(120, 54, 204, 0.7), rgba(120, 54, 204, 0));
+    box-shadow: 0 0 15px 4px rgba(120, 54, 204, 0.6);
+}
+
+.btn-close {
+    box-sizing: content-box;
+    width: 1em;
+    height: 1em;
+    padding: .25em .25em;
+    color: var(--meet-white);
+    background: transparent url("../icones/icone-close.svg") center/1em auto no-repeat;
+    border: 0;
+    border-radius: .25rem;
+    opacity: .5;
+    font-size: 1.3rem;
+}
+
+.modal-header {
+    border-bottom: none
+}
+
+#bouton-modale-maker {
+    display: inline-block;
+    font-family: 'Proxima-Nova-Regular', Arial, Helvetica, sans-serif;
+    font-size: 1.8rem;
+    text-decoration: none;
+    background-image: var(--meet-orange-gradient);
+    width: 250px;
+}
+
+#bouton-modale-maker:hover {
+    font-family: 'Proxima-Nova-Bold', Arial, Helvetica, sans-serif;
+    background-image: none;
+    background-color: var(--meet-orange);
+}
+
+#modale-choix {
+    font-family: 'Proxima-Nova-Regular', Arial, Helvetica, sans-serif;
+    font-size: 1.6rem;
+    color: var(--meet-white);
+}
+
+#bouton-modale-votant {
+    display: inline-block;
+    font-family: 'Proxima-Nova-Regular', Arial, Helvetica, sans-serif;
+    font-size: 1.8rem;
+    text-decoration: none;
+    background-image: var(--meet-purple-gradient);
+    width: 250px;
+}
+
+#bouton-modale-votant:hover {
+    font-family: 'Proxima-Nova-Bold', Arial, Helvetica, sans-serif;
+    background-image: none;
+    background-color: var(--meet-dark-purple);
+}
+
+.modal-backdrop {
+    z-index: 1;
+}
+
+.modal-dialog {
+    max-width: 500px;
+    margin: 5rem auto;
 }
 
 /************************************* HEADER *************************************/

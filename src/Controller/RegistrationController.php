@@ -50,11 +50,13 @@ class RegistrationController extends AbstractController
         if($type == 'complete'){
             $form->add('firstName',TextType::class,
                 [
+                    'label' => "Prénom* ",
                     'required'=> true,
                 ],
             );
             $form->add('lastName',TextType::class,
                 [
+                    // 'label' => "Nom* ",
                     'required'=> true,
                 ],
             );
@@ -66,7 +68,7 @@ class RegistrationController extends AbstractController
             $form->add('userType',EntityType::class, 
                     [
                         'class' => UserType::class,
-                        'choice_label' =>'name',
+                        'choice_label' =>'label',
                         'expanded'=> true, 
                         'multiple'=> false,
                         'required'=> true,

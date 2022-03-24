@@ -136,107 +136,20 @@ h5 {
 }
 
 /************************************* CARDS *************************************/
-/*#carte-spotlight {
-}*/
-
-.card {
-    width: 390px;
-    height: 485px;
-    background-color: red;
-    border: 0;
-    box-shadow: 0 0 15px 4px rgba(120, 54, 204, 0.6);
-}
-
-#spotlight .titre-card {
-    font-family: 'Bebas Neue';
-    font-size: 3.6rem;
-}
-
-#spotlight .text-card {
-    font-family: 'Proxima-Nova-Regular';
-    font-size: 2.3rem;
-}
-
-/*#card1{
-    background-image: url(../img/artiste-12.jpg);
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: center;
-    border-radius: 10px;
-    max-width: 350px;
-}*/
 
 /************************************* IMAGES *************************************/
 
 /************************************* BOUTONS *************************************/
 
 /*********** Boutons Général ***********/
-.btn:focus,
-.btn:active {
+.btn:focus, .btn:active {
     box-shadow: none;
 }
 
 .btn-outline-light:active {
     background-color: unset;
 }
-
-/*********** Fin Boutons Général ***********/
-
-/*********** Boutons Navbar ***********/
-.boutons-registration>button,
-#bouton-voir-projet {
-    font-size: 2.3rem;
-    margin-right: 1vw;
-}
-
-/*********** Boutons inscription ***********/
-#bouton-registration,
-#bouton-voir-projet {
-    color: var(--meet-orange);
-    border: 3px solid;
-    box-shadow: 0 0 1rem rgba(243, 162, 66, 0.5);
-}
-
-#bouton-registration.btn-outline-primary:hover,
-#bouton-voir-projet.btn-outline-primary:hover {
-    background-color: var(--meet-orange);
-    color: var(--meet-white);
-    border: 3px var(--meet-orange) solid;
-}
-
-#bouton-login.btn-outline-secondary {
-    border: 0px;
-}
-
-#bouton-login.btn-outline-secondary:hover {
-    background-color: unset;
-    opacity: 0.8;
-}
-
-/*********** Menu burger ***********/
-#nav .navbar-toggler {
-    border: none;
-    font-size: 1.8rem;
-}
-
-#nav .navbar-toggler-icon {
-    background-image: url(../icones/icone-burger.svg);
-}
-
-#nav .navbar-toggler:focus {
-    text-decoration: none;
-    outline: 0;
-    box-shadow: none;
-}
-
-/*********** Fin Boutons Navbar ***********/
-
-/*********** Voir + ***********/
-#bouton-voir-plus {
-    font-family: 'Proxima-Nova-Regular';
-    text-decoration: none;
-    display: none;
-}
+/**********************/
 
 /*********** Boutons nav secondaire (projets clos, candidatures ouvertes, votes ouverts) ***********/
 #bouton-projets-clos-gauche,
@@ -246,6 +159,7 @@ h5 {
 #bouton-votes-ouverts-gauche,
 #bouton-votes-ouverts-droit {
     font-family: 'Proxima-Nova-Regular';
+    font-size: 1.8rem;
     text-decoration: none;
     opacity: 0.5;
 }
@@ -275,6 +189,42 @@ h5 {
 #bouton-votes-ouverts-gauche:hover,
 #bouton-votes-ouverts-droit:hover {
     opacity: 1;
+}
+
+/*********** Boutons Candidate ***********/
+#bouton-candidate{
+    font-family: 'Bebas Neue';
+    background-color: var(--meet-light-orange);
+    font-size: 1.8rem;
+}
+
+#bouton-candidate:hover{
+    background-image: var(--meet-orange-gradient);
+}
+
+/*********** Boutons Vote ***********/
+#bouton-vote{
+    font-family: 'Bebas Neue';
+    background-color: var(--meet-orange);
+    font-size: 1.8rem;
+}
+
+#bouton-vote:hover{
+    background-color: var(--meet-light-orange);
+}
+
+/*********** Boutons Créer un projet ***********/
+#bouton-creer-projet{
+    font-family: 'Proxima-Nova-Bold';
+    background-image: var(--meet-purple-gradient);
+    font-size: 1.6rem;
+    text-transform: uppercase;
+    transition: ease-in-out;
+}
+
+#bouton-creer-projet:hover{
+    background-image: none;
+    background-color: var(--meet-blue);
 }
 
 /*********** Boutons Ajouter+ - Modifier ***********/
@@ -315,6 +265,36 @@ h5 {
     background-image: var(--meet-orange-gradient);
 }
 
+
+
+/*********** Boutons Navbar ***********/
+.boutons-registration>button, #bouton-voir-projet {
+    font-size: 2.2rem;
+    margin-right: 1vw;
+}
+
+/*********** Boutons inscription ***********/
+#bouton-registration, #bouton-voir-projet {
+    color: var(--meet-orange);
+    border: 3px solid;
+    box-shadow: 0 0 1rem rgba(243, 162, 66, 0.5);
+}
+
+#bouton-registration.btn-outline-primary:hover, #bouton-voir-projet.btn-outline-primary:hover {
+    background-color: var(--meet-orange);
+    color: var(--meet-white);
+    border: 3px var(--meet-orange) solid;
+}
+
+#bouton-login.btn-outline-secondary {
+    border: 0px;
+}
+
+#bouton-login.btn-outline-secondary:hover {
+    background-color: unset;
+    opacity: 0.8;
+}
+
 /************************************* TAGS *************************************/
 
 /*********** Musicien - Vidéaste ***********/
@@ -346,162 +326,13 @@ h5 {
 /************************************* FIN TAGS *************************************/
 
 /************************************* NAVBARRE *************************************/
-#nav #logo-nav {
-    height: 65px;
-}
-
-#nav.bg-dark {
-    background-color: var(--meet-black) !important;
-}
-
-#nav .dropdown-menu {
-    background-color: var(--meet-dark-purple);
-    border: 1px solid rgba(0, 0, 0, .15);
-    border-radius: 0 0 2rem 2rem;
-}
-
-#nav .dropdown-item {
-    font-size: 2rem;
-}
-
-#nav .dropdown-item:hover {
-    background-color: unset;
-    opacity: 0.8;
-}
-
-#nav .dropdown-toggle::after {
-    content: url(../icones/icone-chevron-bas.svg);
-    border: none;
-    vertical-align: middle;
-}
-
-#nav .dropdown-toggle::after {
-    content: url(../icones/icone-chevron-bas.svg);
-    border: none;
-    vertical-align: middle;
-}
+/************************************* FIN NAVBARRE *************************************/
 
 /************************************* HEADER *************************************/
-
-/*********** Héroshot / Timer ***********/
-#header {
-    background: linear-gradient(to bottom, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0)), url(../img/heroshot-timer.png) no-repeat left center;
-    height: 556px;
-    /*padding: 8% 0;*/
-    padding: 5% 0;
-}
-
-#header p {
-    font-family: 'Bebas Neue';
-    font-size: 2.3rem;
-}
-
-#header .timer-flex {
-    padding-bottom: 6%;
-}
-
-#header .timer-nombre {
-    font-family: 'Digital-Number';
-    font-size: 9rem;
-}
-
-#header .taille-heure {
-    font-size: 2.7rem;
-}
-
-/*********** Héroshot / Timer - RESPONSIVE ***********/
-@media (max-width: 575.98px) {
-
-    /*********** Header ***********/
-    #header {
-        margin-top: -13%;
-        padding-top: 20%;
-    }
-
-    /*********** Héroshot / Timer ***********/
-    #header .timer-nombre {
-        font-family: 'Digital-Number';
-        font-size: 6rem;
-    }
-
-    #header .taille-heure {
-        font-size: 2rem;
-    }
-
-    #header .cloture-vote h3,
-    #header .cloture-candidature h3 {
-        font-size: 2.5rem;
-    }
-
-    #header .taille-vague {
-        font-size: 2rem;
-    }
-}
-
-/*********** FIN RESPONSIVE ***********/
-
-/*********** Fin Héroshot / Timer ***********/
-
 /************************************* FIN HEADER *************************************/
 
 /************************************* MAIN *************************************/
-/*********** Spotlight ***********/
-#spotlight p {
-    font-size: 1.6rem;
-}
-
-/*********** Votes ouverts - Candidatures ouvertes - Projets clos ***********/
-#votes-ouverts {
-    margin-top: 5%;
-}
-
-#candidatures-ouvertes {
-    margin: 5% 0;
-}
-
-.titres:hover #bouton-voir-plus {
-    display: inline-block;
-}
-
-.chevron-slider {
-    height: 4.8rem;
-}
-
-.slider-section {
-    background-image: linear-gradient(to left, rgba(28, 15, 34, 1), rgba(28, 15, 34, 0));
-    height: 485px;
-}
-
-.sections-contenant {
-    width: 1900px;
-    overflow-x: scroll;
-}
-
-.cards-projets {
-    flex-shrink: 0;
-    flex-basis: 390px;
-    height: 485px;
-    background-color: var(--meet-orange);
-}
+/************************************* FIN MAIN *************************************/
 
 /************************************* FOOTER *************************************/
-#footer {
-    background-color: var(--meet-black);
-}
-
-#footer #logo-footer {
-    height: 80px;
-}
-
-#footer .social-network {
-    height: 40px;
-}
-
-#footer ul li {
-    font-family: 'Proxima-Nova-Regular';
-    font-size: 1.4rem;
-}
-
-#footer hr {
-    color: var(--meet-white);
-}
+/************************************* FIN FOOTER *************************************/

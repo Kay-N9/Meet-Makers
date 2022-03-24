@@ -143,42 +143,118 @@ h5 {
     box-shadow: 0 0 15px 4px rgba(120, 54, 204, 0.6);
 }
 
-.titre-carte-artiste {
+.titre-card-artiste {
     font-family: 'Bebas Neue';
     font-size: 3.6rem;
 }
 
-.texte-carte-artiste {
+.text-card-artiste {
     font-family: 'Proxima-Nova-Regular';
     font-size: 2.3rem;
 }
 
-.style-musique-carte-artiste, .localisation-carte-artiste {
+.style-musique-card-artiste,
+.localisation-card-artiste {
     font-family: 'Proxima-Nova-Regular';
     font-size: 2rem;
 }
 
-.texte-bottom-carte-artiste {
+.texte-bottom-card-artiste {
     font-family: "Proxima Nova";
 }
 
 .image-carte-artiste {
-        object-fit: cover;
+    object-fit: cover;
 }
 
 /************************************* IMAGES *************************************/
 
 /************************************* BOUTONS *************************************/
 
+/************************************* BOUTONS *************************************/
+
 /*********** Boutons Général ***********/
-.btn:focus, .btn:active {
+.btn:focus,
+.btn:active {
     box-shadow: none;
 }
 
 .btn-outline-light:active {
     background-color: unset;
 }
-/**********************/
+
+/*********** Fin Boutons Général ***********/
+
+/*********** Boutons Navbar ***********/
+.boutons-registration>button,
+#bouton-voir-projet {
+    font-size: 2.2rem;
+    margin-right: 1vw;
+}
+
+/*********** Boutons inscription ***********/
+#bouton-registration,
+#bouton-voir-projet {
+    color: var(--meet-orange);
+    border: 3px solid;
+    box-shadow: 0 0 1rem rgba(243, 162, 66, 0.5);
+}
+
+#bouton-registration.btn-outline-primary:hover,
+#bouton-voir-projet.btn-outline-primary:hover {
+    background-color: var(--meet-orange);
+    color: var(--meet-white);
+    border: 3px var(--meet-orange) solid;
+}
+
+#bouton-login.btn-outline-secondary {
+    border: 0px;
+}
+
+#bouton-login.btn-outline-secondary:hover {
+    background-color: unset;
+    opacity: 0.8;
+}
+
+/*********** Boutons Créer un projet ***********/
+#bouton-creer-projet {
+    font-family: 'Proxima-Nova-Bold';
+    background-image: var(--meet-purple-gradient);
+    font-size: 1.6rem;
+    text-transform: uppercase;
+    transition: ease-in-out;
+}
+
+#bouton-creer-projet:hover {
+    background-image: none;
+    background-color: var(--meet-blue);
+}
+
+
+/*********** Menu burger ***********/
+#nav .navbar-toggler {
+    border: none;
+    font-size: 1.8rem;
+}
+
+#nav .navbar-toggler-icon {
+    background-image: url(../icones/icone-burger.svg);
+}
+
+#nav .navbar-toggler:focus {
+    text-decoration: none;
+    outline: 0;
+    box-shadow: none;
+}
+
+/*********** Fin Boutons Navbar ***********/
+
+/*********** Voir + ***********/
+#bouton-voir-plus {
+    font-family: 'Proxima-Nova-Regular';
+    text-decoration: none;
+    display: none;
+}
 
 /*********** Boutons nav secondaire (projets clos, candidatures ouvertes, votes ouverts) ***********/
 #bouton-projets-clos-gauche,
@@ -188,7 +264,6 @@ h5 {
 #bouton-votes-ouverts-gauche,
 #bouton-votes-ouverts-droit {
     font-family: 'Proxima-Nova-Regular';
-    font-size: 1.8rem;
     text-decoration: none;
     opacity: 0.5;
 }
@@ -221,39 +296,44 @@ h5 {
 }
 
 /*********** Boutons Candidate ***********/
-#bouton-candidate{
+#bouton-candidate {
+    /*display: none;*/
     font-family: 'Bebas Neue';
     background-color: var(--meet-light-orange);
-    font-size: 1.8rem;
+    font-size: 2rem;
+    color: var(--meet-white);
+    margin-bottom: 70px;
 }
 
-#bouton-candidate:hover{
+#bouton-candidate:hover {
     background-image: var(--meet-orange-gradient);
 }
 
-/*********** Boutons Vote ***********/
-#bouton-vote{
+/*********** Boutons Vote carte artiste ***********/
+#bouton-vote-carte-artiste {
+    /*display: none;*/
     font-family: 'Bebas Neue';
     background-color: var(--meet-orange);
-    font-size: 1.8rem;
+    font-size: 1.5rem;
+    color: var(--meet-white);
+    margin-bottom: 70px;
 }
 
-#bouton-vote:hover{
+#bouton-vote-carte-artiste:hover {
     background-color: var(--meet-dark-purple);
 }
 
-/*********** Boutons Créer un projet ***********/
-#bouton-creer-projet{
-    font-family: 'Proxima-Nova-Bold';
-    background-image: var(--meet-purple-gradient);
-    font-size: 1.6rem;
-    text-transform: uppercase;
-    transition: ease-in-out;
+/*********** Boutons Vote ***********/
+#bouton-vote {
+    display: none;
+    font-family: 'Bebas Neue';
+    background-color: var(--meet-orange);
+    font-size: 1.5rem;
+    color: var(--meet-white);
 }
 
-#bouton-creer-projet:hover{
-    background-image: none;
-    background-color: var(--meet-blue);
+#bouton-vote:hover {
+    background-color: var(--meet-dark-purple);
 }
 
 /*********** Boutons Ajouter+ - Modifier ***********/
@@ -294,35 +374,6 @@ h5 {
     background-image: var(--meet-orange-gradient);
 }
 
-
-
-/*********** Boutons Navbar ***********/
-.boutons-registration>button, #bouton-voir-projet {
-    font-size: 2.2rem;
-    margin-right: 1vw;
-}
-
-/*********** Boutons inscription ***********/
-#bouton-registration, #bouton-voir-projet {
-    color: var(--meet-orange);
-    border: 3px solid;
-    box-shadow: 0 0 1rem rgba(243, 162, 66, 0.5);
-}
-
-#bouton-registration.btn-outline-primary:hover, #bouton-voir-projet.btn-outline-primary:hover {
-    background-color: var(--meet-orange);
-    color: var(--meet-white);
-    border: 3px var(--meet-orange) solid;
-}
-
-#bouton-login.btn-outline-secondary {
-    border: 0px;
-}
-
-#bouton-login.btn-outline-secondary:hover {
-    background-color: unset;
-    opacity: 0.8;
-}
 
 /************************************* TAGS *************************************/
 
@@ -502,33 +553,130 @@ h5 {
 }
 
 /************************************* HEADER *************************************/
-#header {
-    min-height: 400px;
-}
-
-#banniere-header {
-    filter: brightness(0.7);
-    object-fit: cover;
-}
-
-#icon-edit {
-    z-index: 1;
-    opacity: 0.5;
-    height: 25px;
-    transition: .2s ease;
-}
-
-#icon-edit:hover {
-    opacity: 1;
-}
-
-#header h1 {
-    z-index: 1;
-    font-size: 9.6rem;
-}
 /************************************* FIN HEADER *************************************/
 
 /************************************* MAIN *************************************/
+h1{
+    text-align: center;
+    margin-bottom: 5rem;
+}
+
+ul {
+    padding-left: 0;
+}
+
+#details p{
+    font-family: 'Bebas Neue';
+    color: var(--meet-white);
+    font-size: 20px;
+    margin-bottom: 0;
+}
+
+#mon-son,#tags{
+    padding-top: 25px;
+}
+
+#boutons-end{
+    margin-top: 40px;
+    margin-bottom: 40px;
+}
+#progressbar {
+    margin-bottom: 7rem;
+    overflow: hidden;
+    color: var(--meet-white);
+    font-family: 'Proxima-Nova' sans-serif;
+    text-transform: uppercase;
+}
+
+#progressbar .active {
+    font-weight: bold;
+}
+
+#progressbar li {
+    list-style-type: none;
+    font-size: 1.2rem;
+    width: calc(100%/3);
+    float: left;
+    position: relative;
+    text-align: center;
+}
+
+#progressbar #wizard-creation:before {
+    content: "1";
+}
+
+#progressbar #wizard-details:before {
+    
+    content: "2";
+}
+
+#progressbar #wizard-validation:before {
+    content: "3";
+}
+
+#progressbar li::before {
+    width: 33px;
+    height: 33px;
+    line-height: 25px;
+    display: block;
+    font-size: 18px;
+    color: transparent;
+    background: var(--meet-white);
+    border: none;
+    border-radius: 50%;
+    margin: 0 auto 10px auto;
+    margin-top: 10px;
+    padding: 2px;
+}
+
+#progressbar li:after {
+    content: '';
+    width: 100%;
+    height: 2px;
+    background: var(--meet-white);
+    position: absolute;
+    left: 0;
+    top: 25px;
+    z-index: -1;
+}
+
+#progressbar li:nth-child(1)::after  {
+    background: linear-gradient(90deg, rgba(255, 255, 255, 0) 50%, rgba(255, 255, 255, 1)50%);
+}
+
+#progressbar li:nth-child(3)::after {
+    background: linear-gradient(90deg, rgba(255, 255, 255, 1) 50%, rgba(255, 255, 255, 0)50%);
+}
+
+
+#progressbar li:nth-last-child(1)::after {
+    content: '';
+    width: 99.5%;
+}
+
+#progressbar li.active:before {
+    background: var(--meet-orange-gradient);
+    color: var(--meet-white);
+    font-family: 'Good Brush';
+}
+
+.wrapper{
+    padding: 9rem;
+    border: 2px solid var(--meet-light-purple);
+    border-radius: 50px;
+    background: linear-gradient(0deg, rgba(127, 103, 142, 0.2), rgba(127, 103, 142, 0.2));
+}
+
+.btn-suivant, .btn-precedent, .btn-valider{
+    display:flex; 
+    justify-content:flex-end; 
+    align-items:center;
+}
+
+#bouton-valider {
+    width: 190px;
+    height: 45px;
+}
 /************************************* FIN MAIN *************************************/
 
 /************************************* FOOTER *************************************/

@@ -81,4 +81,9 @@ class UserType
 
         return $this;
     }
+
+    public function getLabel(): string
+    {
+        return "Je suis ".$this->getName();
+    }
 }
