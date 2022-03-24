@@ -37,11 +37,11 @@ project_rech:
 
 project_create_project:
    path: /creation_projet
-   controller: App\Controller\ProjectController::index
+   controller: App\Controller\ProjectController::create
 
 project_create_project_middle:
    path: /creation_projet_part2/{idProject}
-   controller: App\Controller\ProjectController::index2
+   controller: App\Controller\ProjectController::create2
    requirements:
      idArticle: '\d+'
 
