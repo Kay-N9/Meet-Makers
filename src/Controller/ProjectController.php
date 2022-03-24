@@ -10,7 +10,7 @@ use App\Form\ProjectFormType;
 use App\Form\ProjectFormType2;
 use Symfony\Component\Filesystem\Path;
 use Doctrine\Persistence\ManagerRegistry;
-use Symfony\Component\Filesystem\Filesystem;
+// use Symfony\Component\Filesystem\Filesystem;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
@@ -33,14 +33,11 @@ class ProjectController extends AbstractController
      /**
      * @Route("/project", name="app_project")
      */
-    public function index(Request $request)
+    public function create(Request $request)
     {
         $this->denyAccessUnlessGranted('ROLE_MUSE');
-       
-        
 
         $project = new Project() ;
-        
      
         $project->setCreateBy($this->getUser()) ;
 
@@ -60,8 +57,6 @@ class ProjectController extends AbstractController
             $project->setStatus($status);
             
 
-            // dd($project);
-
             $em = $this->doctrine->getManager();
 
             $em->persist($project);
@@ -73,15 +68,16 @@ class ProjectController extends AbstractController
         }
 
         return $this->renderForm(
-            'project/index.html.twig',
+            'project/create.html.twig',
             [
                 "project" => $project,
                 "form" => $form,
             ]
         );
     }
-
-    public function index2($idProject, Request $request)
+ 
+    ################################################### FORM PART 2 ###############################################
+    public function create2($idProject, Request $request)
     {
         $this->denyAccessUnlessGranted('ROLE_MUSE');
         
@@ -107,13 +103,27 @@ class ProjectController extends AbstractController
             // $project->setStatus($status);
 
             // dd($project);
-        
-        
 
             $sond = $form->get('uploadProject')->getData();
+            $image = $form->get('uploadPicture')->getData();
 
-            $fichier = md5(uniqid()). '.'. $sond->guessExtension();
-            $sond->move();
+            // On génère un nouveau nom de fichier
+            $fichier_son = md5(uniqid()). '.'. $sond->guessExtension();
+            $fichier_img = md5(uniqid()). '.'. $image->guessExtension();
+
+            // On copie le fichier dans le dossier uploads
+            $sond->move(
+                $this->getParameter('sond_directory'),
+                $fichier_son 
+            );
+            $image->move(
+                $this->getParameter('images_directory'),
+                $fichier_img
+            );
+            // On stocke l'image dans la base de donée (son nom)
+            $project->setuploadPicture($fichier_img);
+            $project->setuploadProject($fichier_son);
+
             $em = $this->doctrine->getManager();
 
             $em->persist($project);
@@ -124,9 +134,21 @@ class ProjectController extends AbstractController
             return $this->redirectToRoute('project_project_confirmation', [ 'idProject' => $project->getId(),]);
         }
 
-        return $this->renderForm('project/index2.html.twig',
+        return $this->renderForm('project/create2.html.twig',
             [
                 "form" => $form,
+            ]
+        );
+    }
+
+    public function create3($idProject)
+    {
+        $projectResum = $this->doctrine->getRepository(Project::class) ;
+
+        $projet = $projectResum->find($idProject) ;
+        return $this->render('project/create.html.twig',
+            [
+                "projet" => $projet,
             ]
         );
     }
