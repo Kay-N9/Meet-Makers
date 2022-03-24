@@ -78,8 +78,8 @@
 					<div id="texte-spotlight" class="text-white">
 						<h3>Billets</h3>
 						<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec mi, quisque cras malesuada.
-							                            Quis mattis morbi et sapien cursus sed. Nibh molestie pellentesque eu hendrerit posuere
-							                            feugiat
+																																																																																																																																																																																																				                            Quis mattis morbi et sapien cursus sed. Nibh molestie pellentesque eu hendrerit posuere
+																																																																																																																																																																																																				                            feugiat
 						</p>
 					</div>
 					<div class="mt-5 mt-md-0 mx-auto mx-md-0">
@@ -115,4 +115,92 @@
 	</section>
 	<main/>
 
-{% endblock %}
+
+	<!------------------------ DEBUT CANDIDATURES OUVERTES ------------------------>
+	<section id="candidatures-ouvertes" class="mx-3 mx-md-0">
+		<div class="titres offset-md-1">
+			<h2 class="text-white">Candidatures ouvertes<a id="bouton-voir-plus" class="text-white fs-2 ms-3" href="#">Voir plus</a>
+				<img src="asset/icones/icone-chevron-droit.svg" alt="chevron vers la droite" class="chevron-titre ms-3"></h2>
+			<div class="filet-titres mb-3 mb-md-5"></div>
+		</div>
+		<div class="position-relative">
+			<div class="slider-section position-absolute top-0 end-0 px-5">
+				<img src="asset/icones/icone-chevron-droit.svg" alt="chevron vers la droite" class="chevron-slider position-relative top-50">
+			</div>
+
+			<!------------------------ DEBUT SLIDER CARTES ------------------------>
+			<div class="sections-contenant">
+				<div
+					class="sections-projets-contenant d-flex justify-content-start align-items-center my-5">
+					<!------------------------ Carte 1 ------------------------>
+
+					{% for project in projectstatus1 %}
+						<div class="carte-contenant ms-md-3 mx-3">
+							<div class="carte-artiste-slider col-12 col-md-3 d-flex justify-content-center align-items-center text-center position-relative rounded-3">
+								<img src="asset/icones/encoche-musique.svg" alt="encoche musique" id="encoche-musique" class="position-absolute top-0 end-0">
+								<div class="position-absolute shadow text-white mb-5 mb-md-0">
+									<p class="titre-card-artiste mb-0">{{project.projectName}}</p>
+									{% for style in project.style %}
+										<p class="text-card-artiste mb-0">{{style.name}}</p>
+									{% endfor %}
+								</div>
+
+								<div class="texte-bottom position-absolute bottom-0 start-0 end-0 d-flex justify-content-between text-white px-5">
+									{% for style in project.style %}
+										<p class="text-card-artiste mb-0">{{style.name}}</p>
+									{% endfor %}
+									<p class="localisation-card-artiste text-end shadow">Paris</p>
+								</div>
+								<img src="asset/img/artiste-12.jpg" alt="photo artiste Gazou" class="image-carte-artiste rounded-3">
+							</div>
+						</div>
+					{% endfor %}
+
+				</div>
+			</div>
+		</section>
+
+
+		<!------------------------ DEBUT PROJETS CLOS ------------------------>
+		<section id="projets-clos" class="mx-3 mx-md-0">
+			<div class="titres offset-md-1">
+				<h2 class="text-white">Projets clos<a id="bouton-voir-plus" class="text-white fs-2 ms-3" href="#">Voir
+																																													                        plus</a><img src="asset/icones/icone-chevron-droit.svg" alt="chevron vers la droite" class="chevron-titre ms-3"></h2>
+				<div class="filet-titres mb-3 mb-md-5"></div>
+			</div>
+			<div class="position-relative">
+				<div class="slider-section position-absolute top-0 end-0 px-5">
+					<img src="asset/icones/icone-chevron-droit.svg" alt="chevron vers la droite" class="chevron-slider position-relative top-50">
+				</div>
+				<!------------------------ DEBUT SLIDER CARTES ------------------------>
+				<div class="sections-contenant">
+					<div
+						class="sections-projets-contenant d-flex justify-content-start align-items-center my-5">
+						<!------------------------ Carte ------------------------>
+						{% for project in projectstatus1 %}
+							<div class="carte-contenant ms-md-3 mx-3">
+								<div class="carte-artiste-slider col-12 col-md-3 d-flex justify-content-center align-items-center text-center position-relative rounded-3">
+									<img src="asset/icones/encoche-musique.svg" alt="encoche musique" id="encoche-musique" class="position-absolute top-0 end-0">
+									<div class="position-absolute shadow text-white mb-5 mb-md-0">
+										<p class="titre-card-artiste mb-0">{{project.projectName}}</p>
+										{% for style in project.style %}
+											<p class="text-card-artiste mb-0">{{style.name}}</p>
+										{% endfor %}
+
+									</div>
+
+									<div class="texte-bottom position-absolute bottom-0 start-0 end-0 d-flex justify-content-between text-white px-5">
+										<p class="style-musique-card-artiste text-start shadow fw-bold">AfroTrap</p>
+										<p class="localisation-card-artiste text-end shadow">Paris</p>
+									</div>
+									<img src="asset/img/artiste-12.jpg" alt="photo artiste Gazou" class="image-carte-artiste rounded-3">
+								</div>
+							</div>
+						{% endfor %}
+
+					</div>
+				</div>
+			</section>
+
+
+		{% endblock %}
