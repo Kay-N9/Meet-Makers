@@ -53,7 +53,7 @@ class ProjectController extends AbstractController
         
         if($form->isSubmitted() && $form->isValid())
         {
-            $project->setDateLacement(new \DateTime('next saturday')) ;
+            $project->setDateLancement(new \DateTime('next saturday')) ;
             $project->setStatus($status);
             
 
@@ -106,12 +106,9 @@ class ProjectController extends AbstractController
 
             $sond = $form->get('uploadProject')->getData();
             $image = $form->get('uploadPicture')->getData();
-
             // On génère un nouveau nom de fichier
-            $fichier_son = pathinfo($sond->getClientOriginalName(), PATHINFO_FILENAME);
-            // md5(uniqid()). '.'. $sond->guessExtension();
-            $fichier_img = pathinfo($image->getClientOriginalName(), PATHINFO_FILENAME);
-            //  md5(uniqid()). '.'. $image->guessExtension();
+            $fichier_son = md5(uniqid()). '.'. $sond->guessExtension();
+            $fichier_img = md5(uniqid()). '.'. $image->guessExtension();
 
             // On copie le fichier dans le dossier uploads
             $sond->move(
@@ -133,7 +130,7 @@ class ProjectController extends AbstractController
             $em->flush();
 
 
-            return $this->redirectToRoute('project_project_confirmation', [ 'idProject' => $project->getId(),]);
+            return $this->redirectToRoute('project_create_project_end', [ 'idProject' => $project->getId(),]);
         }
 
         return $this->renderForm('project/create2.html.twig',
@@ -148,7 +145,8 @@ class ProjectController extends AbstractController
         $projectResum = $this->doctrine->getRepository(Project::class) ;
 
         $projet = $projectResum->find($idProject) ;
-        return $this->render('project/create.html.twig',
+        // $dateLancement = $projet->getDateLacement();
+        return $this->render('project/create3.html.twig',
             [
                 "projet" => $projet,
             ]

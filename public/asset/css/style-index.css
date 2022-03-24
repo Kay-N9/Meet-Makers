@@ -83,6 +83,10 @@ body {
 /*********** Fin général ***********/
 
 /************************************* TYPOS *************************************/
+a{
+    text-decoration: none;
+    color: white;
+}
 nav a,
 .boutons-registration,
 #bouton-voir-projet {
@@ -495,6 +499,7 @@ h5 {
     background-color: var(--meet-black);
     background-image: linear-gradient(-45deg, rgba(120, 54, 204, 0.7), rgba(120, 54, 204, 0));
     box-shadow: 0 0 15px 4px rgba(120, 54, 204, 0.6);
+    z-index: 0;
 }
 
 .btn-close {

@@ -56,8 +56,11 @@ return [
                 .')'
                 .'|/user/([^/]++)(*:241)'
                 .'|/c(?'
-                    .'|reation_projet_part2/([^/]++)(*:283)'
-                    .'|onfirmaion/([^/]++)(*:310)'
+                    .'|reation_projet_(?'
+                        .'|part2/([^/]++)(*:286)'
+                        .'|fin/([^/]++)(*:306)'
+                    .')'
+                    .'|onfirmaion/([^/]++)(*:334)'
                 .')'
             .')/?$}sDu',
     ],
@@ -73,8 +76,9 @@ return [
         207 => [[['_route' => '_profiler_exception_css', '_controller' => 'web_profiler.controller.exception_panel::stylesheet'], ['token'], null, null, false, false, null]],
         217 => [[['_route' => '_profiler', '_controller' => 'web_profiler.controller.profiler::panelAction'], ['token'], null, null, false, true, null]],
         241 => [[['_route' => 'project_user', '_controller' => 'App\\Controller\\UserController::show'], ['idUser'], null, null, false, true, null]],
-        283 => [[['_route' => 'project_create_project_middle', '_controller' => 'App\\Controller\\ProjectController::create2'], ['idProject'], null, null, false, true, null]],
-        310 => [
+        286 => [[['_route' => 'project_create_project_middle', '_controller' => 'App\\Controller\\ProjectController::create2'], ['idProject'], null, null, false, true, null]],
+        306 => [[['_route' => 'project_create_project_end', '_controller' => 'App\\Controller\\ProjectController::create3'], ['idProject'], null, null, false, true, null]],
+        334 => [
             [['_route' => 'project_project_confirmation', '_controller' => 'App\\Controller\\ProjectController::Confirmation'], ['idProject'], null, null, false, true, null],
             [null, null, null, null, false, false, 0],
         ],

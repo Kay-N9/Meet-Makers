@@ -22,74 +22,7 @@
     <title>Meet Makers</title>
 </head>               
 
-		<!------------------------ DEBUT NAVBAR ------------------------>
-
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top" id="nav">
-        <div class="container">
-            <a class="navbar-brand" href="#">
-                <img src="asset/img/logo-entier.png" alt="logo meet makers" id="logo-nav">
-            </a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
-                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
-                aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse justify-content-between" id="navbarSupportedContent">
-                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle ps-2 text-white" href="#" id="navbarDropdown" role="button"
-                            data-bs-toggle="dropdown" aria-expanded="false">
-                            Les projets
-                        </a>
-                        <ul class="dropdown-menu px-2" aria-labelledby="navbarDropdown">
-                            <li><a class="dropdown-item text-white" href="#">Les candidatures ouvertes</a></li>
-                            <li><a c!,0erts</a></li>
-                            <li><a class="dropdown-item text-white" href="#">Les projets clos</a></li>
-                        </ul>
-                    </li>
-                    <li class="nav-item ps-3 dropdown">
-                        <a class="nav-link dropdown-toggle text-white" href="#" id="navbarDropdown" role="button"
-                            data-bs-toggle="dropdown" aria-expanded="false">
-                            Nos makers
-                        </a>
-                        <ul class="dropdown-menu px-2" aria-labelledby="navbarDropdown">
-                            <li><a class="dropdown-item text-white" href="#">Nos musiciens</a></li>
-                            <li><a class="dropdown-item text-white" href="#">Nos vidéastes</a></li>
-                        </ul>
-                    </li>
-                </ul>
-                <div id="nav-searchbar" class="text-white mx-3">
-                    <input type="checkbox" class="checkbox-searchbar mx-3">
-                </div>
-                <div class="boutons-registration d-flex">
-                    <button type="button" id="bouton-registration" class="btn btn-outline-primary">Je m'inscris</button>
-                    <!-- Quand makers connecté :
-                    <a href="#" id="profil-maker" class="mx-3"><img src="asset/icones/icone-user-casque.svg" class="me-3">Mon profil</a>
-                    <button type="button" id="bouton-login" class="btn btn-outline-secondary text-white">Je me déconnecte</button>-->
-                    <button type="button" id="bouton-login" class="btn btn-outline-secondary text-white">Je me connecte</button>
-                </div>
-            </div>
-        </div>
-
-		<nav class="log-nav">
-            
-                <li id="root"></li>
-            {% if is_granted('ROLE_USER') %}
-                <a href="{{ path('project_user', {idUser:app.user.id})}}"><p>Bonjour {{ app.user.nickname }}</p></a>
-                <li><a href="{{ path('project_logout')}}">Déconnection-Track-Mec</a></li>
-
-            {% endif %}
-            {% if is_granted('ROLE_MUSE') %}       
-                <li><a href="{{ path('project_create_project')}}">Crea-Track-Mec</a></li>
-
-            {% else %}    
-               <li><a href="{{ path('project_log')}}">Connection-Track-Mec</a></li>
-                <li><a href="{{ path('project_registery')}}">Inscription-Track-Mec</a></li>
-                
-            {% endif %}
-        </nav>
-
-    </nav>
+		
 
 			{% block title %}
 			{% endblock %}
@@ -106,10 +39,127 @@
 		{% endblock %}
 	</head>
 	<body>
+    <!------------------------ DEBUT NAVBAR PROPRE------------------------>
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top" id="nav">
+            <div class="container">
+                <a class="navbar-brand" href="{{path('project_main_home')}}">
+                    <img src="asset/img/logo-entier.png" alt="logo meet makers" id="logo-nav">
+                </a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                    aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse justify-content-between" id="navbarSupportedContent">
+                    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle ps-2 text-white me-3 text-center" href="#"
+                                id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                Les projets
+                            </a>
+                            <ul class="dropdown-menu text-center rounded-3 px-3 py-2" aria-labelledby="navbarDropdown">
+                                <li><a class="dropdown-item text-white" href="#">Les candidatures ouvertes</a></li>
+                                <li><a class="dropdown-item text-white" href="#">Les votes ouverts</a></li>
+                                <li><a class="dropdown-item text-white" href="#">Les projets clos</a></li>
+                            </ul>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle text-white text-center" href="#" id="navbarDropdown"
+                                role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                Nos makers
+                            </a>
+                            <ul class="dropdown-menu text-center rounded-3 px-3 py-2" aria-labelledby="navbarDropdown">
+                                <li><a class="dropdown-item text-white" href="#">Nos musiciens</a></li>
+                                <li><a class="dropdown-item text-white" href="#">Nos vidéastes</a></li>
+                            </ul>
+                        </li>
+                    </ul>
 
+                    <div id="nav-searchbar" class="dropdown text-white mx-3">
+                        <input type="checkbox" class="checkbox-searchbar mx-auto mx-md-3">
+                    </div>
+                {% if is_granted('ROLE_MUSE') %}     
+                    <!-- Bouton créer un projet - s'affiche uniquement quand on est connecté en maker -->
+                    <div class="text-center">
+                        <button type="button" id="bouton-creer-projet" class="btn rounded-pill mx-3 my-5 px-4 py-2 shadow text-white">
+                            <a href="{{ path('project_create_project')}}">
+                                Je crée un projet
+                            </a>
+                        </button>
+                    </div>
+                {% else %}  
+                    <div class="boutons-registration d-flex justify-content-center my-5 my-md-0">
+                        <!-- Button trigger modal -->
+                        <button type="button" id="bouton-registration" class="btn btn-outline-primary me-5 me-md-2"
+                            data-bs-toggle="modal" data-bs-target="#exampleModal">
+                            Je m'inscris
+                        </button>
 
-		{% block body %}
+                        <!-- Modal -->
+                        <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel"
+                            aria-hidden="true">
+                            <div class="modal-dialog" role="document">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <h3 class="modal-title text-center text-white mx-5 my-3" id="exampleModalLabel">
+                                            Rejoins la communauté des makers !
+                                        </h3>
+                                        <button type="button" class="btn-close text-white mx-auto" data-bs-dismiss="modal"
+                                            aria-label="Close">
+                                        </button>
+                                    </div>
 
+                                    <div class="modal-body d-flex flex-column justify-content-center mt-4 mb-5">
+                                        <div id="inscription-maker" class="mx-auto">
+                                            <a href="{{  path('project_regist_makers')}}" id="bouton-modale-maker"
+                                                class="text-center rounded-pill px-2 py-3 text-white shadow">
+                                                Je veux poster un projet
+                                            </a>
+                                        </div>
+                                        <p id="modale-choix" class="text-center my-5">ou bien</p>
+                                        <div id="inscription-votant" class="mx-auto">
+                                            <a href="{{  path('project_regist_votant')}}" id="bouton-modale-votant"class="text-center rounded-pill px-2 py-3 text-white shadow">
+                                                Je veux voter pour un projet
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>    
+                            </div>
+                        </div>
+                        <button role="button" id="bouton-login" class="btn btn-outline-secondary text-white" ><a href="{{ path('project_log')}}">Je me
+                            connecte</a>
+                        </button>
+                {% endif %}
+                    {% if is_granted('ROLE_USER') %}
+                        <!--Quand makers connecté :-->
+                        <a href="{{ path('project_user', {idUser:app.user.id})}}" id="profil-maker" class="mx-3">
+                            <img src="asset/icones/icone-user-casque.svg" class="me-3">{{ app.user.nickname }} - profil
+                        </a>
+                        <button type="button" id="bouton-login" class="btn btn-outline-secondary text-white mx-3">
+                            <a href="{{ path('project_logout')}}">
+                                Je me déconnecte
+                            </a>
+                        </button>
+                    {% endif %}
+                    </div>
+                </div>
+            </div>
+            <nav class="log-nav">
+            
+                    <li id="root"></li>
+                
+
+                
+                      
+
+                 
+
+                    
+                
+            </nav>
+        </nav>
+        {% block body %}
+            
 		{% endblock %}
 
 

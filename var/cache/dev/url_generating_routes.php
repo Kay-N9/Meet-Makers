@@ -34,5 +34,6 @@ return [
     'project_rech' => [[], ['_controller' => 'App\\Controller\\ApiController::getData'], [], [['text', '/api_data']], [], [], []],
     'project_create_project' => [[], ['_controller' => 'App\\Controller\\ProjectController::create'], [], [['text', '/creation_projet']], [], [], []],
     'project_create_project_middle' => [['idProject'], ['_controller' => 'App\\Controller\\ProjectController::create2'], ['idArticle' => '\\d+'], [['variable', '/', '[^/]++', 'idProject', true], ['text', '/creation_projet_part2']], [], [], []],
+    'project_create_project_end' => [['idProject'], ['_controller' => 'App\\Controller\\ProjectController::create3'], ['idArticle' => '\\d+'], [['variable', '/', '[^/]++', 'idProject', true], ['text', '/creation_projet_fin']], [], [], []],
     'project_project_confirmation' => [['idProject'], ['_controller' => 'App\\Controller\\ProjectController::Confirmation'], ['idArticle' => '\\d+'], [['variable', '/', '[^/]++', 'idProject', true], ['text', '/confirmaion']], [], [], []],
 ];

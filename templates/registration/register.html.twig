@@ -1,6 +1,6 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Register
+{% block title %}
     <head>
         <!-- Required meta tags -->
         <meta charset="utf-8">
@@ -41,7 +41,7 @@
                 <div id="formulaire-content">
                     <div class="mx-auto my-5 d-flex flex-wrap justify-content-start">
                         <div class="mx-5 my-3">
-                            <label for="{{registrationForm.vars.id}}">Nom*</label>
+                            <label for="nom">Nom*</label>
                             {{ form_widget(registrationForm.lastName, {'attr':{'class':'form-control','id':'nom','placeholder':'Nom'}}) }}
                         </div>
                         <div class="mx-5 my-3">

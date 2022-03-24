@@ -65,8 +65,8 @@ class __TwigTemplate_a50caa82c19b7d5bfd17b792783ba8cd6c2a702aed6189ebdb30dd35ecd
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02 = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "title"));
 
-        echo "Register
-    <head>
+        // line 4
+        echo "    <head>
         <!-- Required meta tags -->
         <meta charset=\"utf-8\">
         <meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">
@@ -146,10 +146,7 @@ class __TwigTemplate_a50caa82c19b7d5bfd17b792783ba8cd6c2a702aed6189ebdb30dd35ecd
                 <div id=\"formulaire-content\">
                     <div class=\"mx-auto my-5 d-flex flex-wrap justify-content-start\">
                         <div class=\"mx-5 my-3\">
-                            <label for=\"";
-            // line 44
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, (isset($context["registrationForm"]) || array_key_exists("registrationForm", $context) ? $context["registrationForm"] : (function () { throw new RuntimeError('Variable "registrationForm" does not exist.', 44, $this->source); })()), "vars", [], "any", false, false, false, 44), "id", [], "any", false, false, false, 44), "html", null, true);
-            echo "\">Nom*</label>
+                            <label for=\"nom\">Nom*</label>
                             ";
             // line 45
             echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock(twig_get_attribute($this->env, $this->source, (isset($context["registrationForm"]) || array_key_exists("registrationForm", $context) ? $context["registrationForm"] : (function () { throw new RuntimeError('Variable "registrationForm" does not exist.', 45, $this->source); })()), "lastName", [], "any", false, false, false, 45), 'widget', ["attr" => ["class" => "form-control", "id" => "nom", "placeholder" => "Nom"]]);
@@ -270,14 +267,14 @@ class __TwigTemplate_a50caa82c19b7d5bfd17b792783ba8cd6c2a702aed6189ebdb30dd35ecd
 
     public function getDebugInfo()
     {
-        return array (  250 => 109,  231 => 94,  225 => 89,  218 => 85,  206 => 76,  203 => 75,  201 => 74,  192 => 68,  184 => 63,  172 => 54,  168 => 52,  162 => 49,  155 => 45,  151 => 44,  144 => 39,  141 => 38,  137 => 36,  135 => 35,  131 => 34,  126 => 31,  117 => 29,  112 => 28,  102 => 27,  81 => 14,  59 => 3,  36 => 1,);
+        return array (  247 => 109,  228 => 94,  222 => 89,  215 => 85,  203 => 76,  200 => 75,  198 => 74,  189 => 68,  181 => 63,  169 => 54,  165 => 52,  159 => 49,  152 => 45,  144 => 39,  141 => 38,  137 => 36,  135 => 35,  131 => 34,  126 => 31,  117 => 29,  112 => 28,  102 => 27,  81 => 14,  69 => 4,  59 => 3,  36 => 1,);
     }
 
     public function getSourceContext()
     {
         return new Source("{% extends 'base.html.twig' %}
 
-{% block title %}Register
+{% block title %}
     <head>
         <!-- Required meta tags -->
         <meta charset=\"utf-8\">
@@ -318,7 +315,7 @@ class __TwigTemplate_a50caa82c19b7d5bfd17b792783ba8cd6c2a702aed6189ebdb30dd35ecd
                 <div id=\"formulaire-content\">
                     <div class=\"mx-auto my-5 d-flex flex-wrap justify-content-start\">
                         <div class=\"mx-5 my-3\">
-                            <label for=\"{{registrationForm.vars.id}}\">Nom*</label>
+                            <label for=\"nom\">Nom*</label>
                             {{ form_widget(registrationForm.lastName, {'attr':{'class':'form-control','id':'nom','placeholder':'Nom'}}) }}
                         </div>
                         <div class=\"mx-5 my-3\">

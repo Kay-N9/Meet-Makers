@@ -247,4 +247,15 @@ class UserType extends \App\Entity\UserType implements \Doctrine\ORM\Proxy\Proxy
         return parent::removeUser($user);
     }
 
+    /**
+     * {@inheritDoc}
+     */
+    public function getLabel(): string
+    {
+
+        $this->__initializer__ && $this->__initializer__->__invoke($this, 'getLabel', []);
+
+        return parent::getLabel();
+    }
+
 }

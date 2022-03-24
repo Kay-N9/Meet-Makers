@@ -74,135 +74,189 @@ class __TwigTemplate_7030ce1f17aafd29062a64fadeedbfc607fda23489cbc639ebd12b9bb7c
 
 \t\t<!------------------------ DEBUT NAVBAR ------------------------>
 
-    <nav class=\"navbar navbar-expand-lg navbar-dark bg-dark sticky-top\" id=\"nav\">
-        <div class=\"container\">
-            <a class=\"navbar-brand\" href=\"#\">
-                <img src=\"asset/img/logo-entier.png\" alt=\"logo meet makers\" id=\"logo-nav\">
-            </a>
-            <button class=\"navbar-toggler\" type=\"button\" data-bs-toggle=\"collapse\"
-                data-bs-target=\"#navbarSupportedContent\" aria-controls=\"navbarSupportedContent\" aria-expanded=\"false\"
-                aria-label=\"Toggle navigation\">
-                <span class=\"navbar-toggler-icon\"></span>
-            </button>
-            <div class=\"collapse navbar-collapse justify-content-between\" id=\"navbarSupportedContent\">
-                <ul class=\"navbar-nav me-auto mb-2 mb-lg-0\">
-                    <li class=\"nav-item dropdown\">
-                        <a class=\"nav-link dropdown-toggle ps-2 text-white\" href=\"#\" id=\"navbarDropdown\" role=\"button\"
-                            data-bs-toggle=\"dropdown\" aria-expanded=\"false\">
-                            Les projets
-                        </a>
-                        <ul class=\"dropdown-menu px-2\" aria-labelledby=\"navbarDropdown\">
-                            <li><a class=\"dropdown-item text-white\" href=\"#\">Les candidatures ouvertes</a></li>
-                            <li><a c!,0erts</a></li>
-                            <li><a class=\"dropdown-item text-white\" href=\"#\">Les projets clos</a></li>
-                        </ul>
-                    </li>
-                    <li class=\"nav-item ps-3 dropdown\">
-                        <a class=\"nav-link dropdown-toggle text-white\" href=\"#\" id=\"navbarDropdown\" role=\"button\"
-                            data-bs-toggle=\"dropdown\" aria-expanded=\"false\">
-                            Nos makers
-                        </a>
-                        <ul class=\"dropdown-menu px-2\" aria-labelledby=\"navbarDropdown\">
-                            <li><a class=\"dropdown-item text-white\" href=\"#\">Nos musiciens</a></li>
-                            <li><a class=\"dropdown-item text-white\" href=\"#\">Nos vidéastes</a></li>
-                        </ul>
-                    </li>
-                </ul>
-                <div id=\"nav-searchbar\" class=\"text-white mx-3\">
-                    <input type=\"checkbox\" class=\"checkbox-searchbar mx-3\">
-                </div>
-                <div class=\"boutons-registration d-flex\">
-                    <button type=\"button\" id=\"bouton-registration\" class=\"btn btn-outline-primary\">Je m'inscris</button>
-                    <!-- Quand makers connecté :
-                    <a href=\"#\" id=\"profil-maker\" class=\"mx-3\"><img src=\"asset/icones/icone-user-casque.svg\" class=\"me-3\">Mon profil</a>
-                    <button type=\"button\" id=\"bouton-login\" class=\"btn btn-outline-secondary text-white\">Je me déconnecte</button>-->
-                    <button type=\"button\" id=\"bouton-login\" class=\"btn btn-outline-secondary text-white\">Je me connecte</button>
-                </div>
-            </div>
-        </div>
-
-\t\t<nav class=\"log-nav\">
-            
-                <li id=\"root\"></li>
-            ";
-        // line 77
-        if ($this->extensions['Symfony\Bridge\Twig\Extension\SecurityExtension']->isGranted("ROLE_USER")) {
-            // line 78
-            echo "                <a href=\"";
-            echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("project_user", ["idUser" => twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 78, $this->source); })()), "user", [], "any", false, false, false, 78), "id", [], "any", false, false, false, 78)]), "html", null, true);
-            echo "\"><p>Bonjour ";
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 78, $this->source); })()), "user", [], "any", false, false, false, 78), "nickname", [], "any", false, false, false, 78), "html", null, true);
-            echo "</p></a>
-                <li><a href=\"";
-            // line 79
-            echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("project_logout");
-            echo "\">Déconnection-Track-Mec</a></li>
-
-            ";
-        }
-        // line 82
-        echo "            ";
-        if ($this->extensions['Symfony\Bridge\Twig\Extension\SecurityExtension']->isGranted("ROLE_MUSE")) {
-            echo "       
-                <li><a href=\"";
-            // line 83
-            echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("project_create_project");
-            echo "\">Crea-Track-Mec</a></li>
-
-            ";
-        } else {
-            // line 85
-            echo "    
-               <li><a href=\"";
-            // line 86
-            echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("project_log");
-            echo "\">Connection-Track-Mec</a></li>
-                <li><a href=\"";
-            // line 87
-            echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("project_registery");
-            echo "\">Inscription-Track-Mec</a></li>
-                
-            ";
-        }
-        // line 90
-        echo "        </nav>
-
-    </nav>
-
 \t\t\t";
-        // line 94
+        // line 27
         $this->displayBlock('title', $context, $blocks);
-        // line 96
+        // line 29
         echo "\t\t</title>
 \t\t<link
 \t\trel=\"icon\" href=\"data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 128 128%22><text y=%221.2em%22 font-size=%2296%22>⚫️</text></svg>\">
 \t\t";
-        // line 100
+        // line 33
         echo "\t\t";
         echo $this->extensions['Symfony\WebpackEncoreBundle\Twig\EntryFilesTwigExtension']->renderWebpackLinkTags("app");
         echo "
 \t\t";
-        // line 101
+        // line 34
         $this->displayBlock('stylesheets', $context, $blocks);
-        // line 103
+        // line 36
         echo "
 \t\t";
-        // line 104
+        // line 37
         $this->displayBlock('javascripts', $context, $blocks);
-        // line 107
+        // line 40
         echo "\t</head>
 \t<body>
+        <nav class=\"navbar navbar-expand-lg navbar-dark bg-dark sticky-top\" id=\"nav\">
+            <div class=\"container\">
+                <a class=\"navbar-brand\" href=\"#\">
+                    <img src=\"asset/img/logo-entier.png\" alt=\"logo meet makers\" id=\"logo-nav\">
+                </a>
+                <button class=\"navbar-toggler\" type=\"button\" data-bs-toggle=\"collapse\"
+                    data-bs-target=\"#navbarSupportedContent\" aria-controls=\"navbarSupportedContent\" aria-expanded=\"false\"
+                    aria-label=\"Toggle navigation\">
+                    <span class=\"navbar-toggler-icon\"></span>
+                </button>
+                <div class=\"collapse navbar-collapse justify-content-between\" id=\"navbarSupportedContent\">
+                    <ul class=\"navbar-nav me-auto mb-2 mb-lg-0\">
+                        <li class=\"nav-item dropdown\">
+                            <a class=\"nav-link dropdown-toggle ps-2 text-white me-3 text-center\" href=\"#\"
+                                id=\"navbarDropdown\" role=\"button\" data-bs-toggle=\"dropdown\" aria-expanded=\"false\">
+                                Les projets
+                            </a>
+                            <ul class=\"dropdown-menu text-center rounded-3 px-3 py-2\" aria-labelledby=\"navbarDropdown\">
+                                <li><a class=\"dropdown-item text-white\" href=\"#\">Les candidatures ouvertes</a></li>
+                                <li><a class=\"dropdown-item text-white\" href=\"#\">Les votes ouverts</a></li>
+                                <li><a class=\"dropdown-item text-white\" href=\"#\">Les projets clos</a></li>
+                            </ul>
+                        </li>
+                        <li class=\"nav-item dropdown\">
+                            <a class=\"nav-link dropdown-toggle text-white text-center\" href=\"#\" id=\"navbarDropdown\"
+                                role=\"button\" data-bs-toggle=\"dropdown\" aria-expanded=\"false\">
+                                Nos makers
+                            </a>
+                            <ul class=\"dropdown-menu text-center rounded-3 px-3 py-2\" aria-labelledby=\"navbarDropdown\">
+                                <li><a class=\"dropdown-item text-white\" href=\"#\">Nos musiciens</a></li>
+                                <li><a class=\"dropdown-item text-white\" href=\"#\">Nos vidéastes</a></li>
+                            </ul>
+                        </li>
+                    </ul>
 
+                    <div id=\"nav-searchbar\" class=\"dropdown text-white mx-3\">
+                        <input type=\"checkbox\" class=\"checkbox-searchbar mx-auto mx-md-3\">
+                    </div>
+                ";
+        // line 80
+        if ($this->extensions['Symfony\Bridge\Twig\Extension\SecurityExtension']->isGranted("ROLE_MUSE")) {
+            echo "     
+                    <!-- Bouton créer un projet - s'affiche uniquement quand on est connecté en maker -->
+                    <div class=\"text-center\">
+                        <button type=\"button\" id=\"bouton-creer-projet\" class=\"btn rounded-pill mx-3 my-5 px-4 py-2 shadow text-white\">
+                            <a href=\"";
+            // line 84
+            echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("project_create_project");
+            echo "\">
+                                Je crée un projet
+                            </a>
+                        </button>
+                    </div>
+                ";
+        } else {
+            // line 89
+            echo "  
+                    <div class=\"boutons-registration d-flex justify-content-center my-5 my-md-0\">
+                        <!-- Button trigger modal -->
+                        <button type=\"button\" id=\"bouton-registration\" class=\"btn btn-outline-primary me-5 me-md-2\"
+                            data-bs-toggle=\"modal\" data-bs-target=\"#exampleModal\">
+                            Je m'inscris
+                        </button>
 
-\t\t";
-        // line 111
+                        <!-- Modal -->
+                        <div class=\"modal fade\" id=\"exampleModal\" tabindex=\"-1\" aria-labelledby=\"exampleModalLabel\"
+                            aria-hidden=\"true\">
+                            <div class=\"modal-dialog\" role=\"document\">
+                                <div class=\"modal-content\">
+                                    <div class=\"modal-header\">
+                                        <h3 class=\"modal-title text-center text-white mx-5 my-3\" id=\"exampleModalLabel\">
+                                            Rejoins la communauté des makers !
+                                        </h3>
+                                        <button type=\"button\" class=\"btn-close text-white mx-auto\" data-bs-dismiss=\"modal\"
+                                            aria-label=\"Close\">
+                                        </button>
+                                    </div>
+
+                                    <div class=\"modal-body d-flex flex-column justify-content-center mt-4 mb-5\">
+                                        <div id=\"inscription-maker\" class=\"mx-auto\">
+                                            <a href=\"";
+            // line 113
+            echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("project_regist_makers");
+            echo "\" id=\"bouton-modale-maker\"
+                                                class=\"text-center rounded-pill px-2 py-3 text-white shadow\">
+                                                Je veux poster un projet
+                                            </a>
+                                        </div>
+                                        <p id=\"modale-choix\" class=\"text-center my-5\">ou bien</p>
+                                        <div id=\"inscription-votant\" class=\"mx-auto\">
+                                            <a href=\"";
+            // line 120
+            echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("project_regist_votant");
+            echo "\" id=\"bouton-modale-votant\"class=\"text-center rounded-pill px-2 py-3 text-white shadow\">
+                                                Je veux voter pour un projet
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>    
+                            </div>
+                        </div>
+                        <button role=\"button\" id=\"bouton-login\" class=\"btn btn-outline-secondary text-white\" ><a href=\"";
+            // line 128
+            echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("project_log");
+            echo "\">Je me
+                            connecte</a>
+                        </button>
+                ";
+        }
+        // line 132
+        echo "                    ";
+        if ($this->extensions['Symfony\Bridge\Twig\Extension\SecurityExtension']->isGranted("ROLE_USER")) {
+            // line 133
+            echo "                        <!--Quand makers connecté :-->
+                        <a href=\"";
+            // line 134
+            echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("project_user", ["idUser" => twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 134, $this->source); })()), "user", [], "any", false, false, false, 134), "id", [], "any", false, false, false, 134)]), "html", null, true);
+            echo "\" id=\"profil-maker\" class=\"mx-3\">
+                            <img src=\"asset/icones/icone-user-casque.svg\" class=\"me-3\">";
+            // line 135
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 135, $this->source); })()), "user", [], "any", false, false, false, 135), "nickname", [], "any", false, false, false, 135), "html", null, true);
+            echo " - profil
+                        </a>
+                        <button type=\"button\" id=\"bouton-login\" class=\"btn btn-outline-secondary text-white mx-3\">
+                            <a href=\"";
+            // line 138
+            echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("project_logout");
+            echo "\">
+                                Je me déconnecte
+                            </a>
+                        </button>
+                    ";
+        }
+        // line 143
+        echo "                    </div>
+                </div>
+            </div>
+            <nav class=\"log-nav\">
+            
+                    <li id=\"root\"></li>
+                
+
+                
+                      
+
+                 
+
+                    
+                
+            </nav>
+        </nav>
+        ";
+        // line 160
         $this->displayBlock('body', $context, $blocks);
-        // line 114
+        // line 163
         echo "
 
 Ò
 \t\t";
-        // line 117
+        // line 166
         $this->displayBlock('footer', $context, $blocks);
         
         $__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e->leave($__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e_prof);
@@ -212,7 +266,7 @@ class __TwigTemplate_7030ce1f17aafd29062a64fadeedbfc607fda23489cbc639ebd12b9bb7c
 
     }
 
-    // line 94
+    // line 27
     public function block_title($context, array $blocks = [])
     {
         $macros = $this->macros;
@@ -222,7 +276,7 @@ class __TwigTemplate_7030ce1f17aafd29062a64fadeedbfc607fda23489cbc639ebd12b9bb7c
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02 = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "title"));
 
-        // line 95
+        // line 28
         echo "\t\t\t";
         
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->leave($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof);
@@ -232,7 +286,7 @@ class __TwigTemplate_7030ce1f17aafd29062a64fadeedbfc607fda23489cbc639ebd12b9bb7c
 
     }
 
-    // line 101
+    // line 34
     public function block_stylesheets($context, array $blocks = [])
     {
         $macros = $this->macros;
@@ -242,7 +296,7 @@ class __TwigTemplate_7030ce1f17aafd29062a64fadeedbfc607fda23489cbc639ebd12b9bb7c
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02 = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "stylesheets"));
 
-        // line 102
+        // line 35
         echo "\t\t";
         
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->leave($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof);
@@ -252,7 +306,7 @@ class __TwigTemplate_7030ce1f17aafd29062a64fadeedbfc607fda23489cbc639ebd12b9bb7c
 
     }
 
-    // line 104
+    // line 37
     public function block_javascripts($context, array $blocks = [])
     {
         $macros = $this->macros;
@@ -262,7 +316,7 @@ class __TwigTemplate_7030ce1f17aafd29062a64fadeedbfc607fda23489cbc639ebd12b9bb7c
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02 = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "javascripts"));
 
-        // line 105
+        // line 38
         echo "\t\t\t";
         echo $this->extensions['Symfony\WebpackEncoreBundle\Twig\EntryFilesTwigExtension']->renderWebpackScriptTags("app");
         echo "
@@ -275,7 +329,7 @@ class __TwigTemplate_7030ce1f17aafd29062a64fadeedbfc607fda23489cbc639ebd12b9bb7c
 
     }
 
-    // line 111
+    // line 160
     public function block_body($context, array $blocks = [])
     {
         $macros = $this->macros;
@@ -285,8 +339,8 @@ class __TwigTemplate_7030ce1f17aafd29062a64fadeedbfc607fda23489cbc639ebd12b9bb7c
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02 = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "body"));
 
-        // line 112
-        echo "
+        // line 161
+        echo "            
 \t\t";
         
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->leave($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof);
@@ -296,7 +350,7 @@ class __TwigTemplate_7030ce1f17aafd29062a64fadeedbfc607fda23489cbc639ebd12b9bb7c
 
     }
 
-    // line 117
+    // line 166
     public function block_footer($context, array $blocks = [])
     {
         $macros = $this->macros;
@@ -306,7 +360,7 @@ class __TwigTemplate_7030ce1f17aafd29062a64fadeedbfc607fda23489cbc639ebd12b9bb7c
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02 = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "footer"));
 
-        // line 118
+        // line 167
         echo "
 
 
@@ -395,7 +449,7 @@ class __TwigTemplate_7030ce1f17aafd29062a64fadeedbfc607fda23489cbc639ebd12b9bb7c
 
     public function getDebugInfo()
     {
-        return array (  310 => 118,  300 => 117,  289 => 112,  279 => 111,  266 => 105,  256 => 104,  246 => 102,  236 => 101,  226 => 95,  216 => 94,  206 => 117,  201 => 114,  199 => 111,  193 => 107,  191 => 104,  188 => 103,  186 => 101,  181 => 100,  176 => 96,  174 => 94,  168 => 90,  162 => 87,  158 => 86,  155 => 85,  149 => 83,  144 => 82,  138 => 79,  131 => 78,  129 => 77,  63 => 14,  48 => 1,);
+        return array (  364 => 167,  354 => 166,  343 => 161,  333 => 160,  320 => 38,  310 => 37,  300 => 35,  290 => 34,  280 => 28,  270 => 27,  260 => 166,  255 => 163,  253 => 160,  234 => 143,  226 => 138,  220 => 135,  216 => 134,  213 => 133,  210 => 132,  203 => 128,  192 => 120,  182 => 113,  156 => 89,  147 => 84,  140 => 80,  98 => 40,  96 => 37,  93 => 36,  91 => 34,  86 => 33,  81 => 29,  79 => 27,  63 => 14,  48 => 1,);
     }
 
     public function getSourceContext()
@@ -426,73 +480,6 @@ class __TwigTemplate_7030ce1f17aafd29062a64fadeedbfc607fda23489cbc639ebd12b9bb7c
 
 \t\t<!------------------------ DEBUT NAVBAR ------------------------>
 
-    <nav class=\"navbar navbar-expand-lg navbar-dark bg-dark sticky-top\" id=\"nav\">
-        <div class=\"container\">
-            <a class=\"navbar-brand\" href=\"#\">
-                <img src=\"asset/img/logo-entier.png\" alt=\"logo meet makers\" id=\"logo-nav\">
-            </a>
-            <button class=\"navbar-toggler\" type=\"button\" data-bs-toggle=\"collapse\"
-                data-bs-target=\"#navbarSupportedContent\" aria-controls=\"navbarSupportedContent\" aria-expanded=\"false\"
-                aria-label=\"Toggle navigation\">
-                <span class=\"navbar-toggler-icon\"></span>
-            </button>
-            <div class=\"collapse navbar-collapse justify-content-between\" id=\"navbarSupportedContent\">
-                <ul class=\"navbar-nav me-auto mb-2 mb-lg-0\">
-                    <li class=\"nav-item dropdown\">
-                        <a class=\"nav-link dropdown-toggle ps-2 text-white\" href=\"#\" id=\"navbarDropdown\" role=\"button\"
-                            data-bs-toggle=\"dropdown\" aria-expanded=\"false\">
-                            Les projets
-                        </a>
-                        <ul class=\"dropdown-menu px-2\" aria-labelledby=\"navbarDropdown\">
-                            <li><a class=\"dropdown-item text-white\" href=\"#\">Les candidatures ouvertes</a></li>
-                            <li><a c!,0erts</a></li>
-                            <li><a class=\"dropdown-item text-white\" href=\"#\">Les projets clos</a></li>
-                        </ul>
-                    </li>
-                    <li class=\"nav-item ps-3 dropdown\">
-                        <a class=\"nav-link dropdown-toggle text-white\" href=\"#\" id=\"navbarDropdown\" role=\"button\"
-                            data-bs-toggle=\"dropdown\" aria-expanded=\"false\">
-                            Nos makers
-                        </a>
-                        <ul class=\"dropdown-menu px-2\" aria-labelledby=\"navbarDropdown\">
-                            <li><a class=\"dropdown-item text-white\" href=\"#\">Nos musiciens</a></li>
-                            <li><a class=\"dropdown-item text-white\" href=\"#\">Nos vidéastes</a></li>
-                        </ul>
-                    </li>
-                </ul>
-                <div id=\"nav-searchbar\" class=\"text-white mx-3\">
-                    <input type=\"checkbox\" class=\"checkbox-searchbar mx-3\">
-                </div>
-                <div class=\"boutons-registration d-flex\">
-                    <button type=\"button\" id=\"bouton-registration\" class=\"btn btn-outline-primary\">Je m'inscris</button>
-                    <!-- Quand makers connecté :
-                    <a href=\"#\" id=\"profil-maker\" class=\"mx-3\"><img src=\"asset/icones/icone-user-casque.svg\" class=\"me-3\">Mon profil</a>
-                    <button type=\"button\" id=\"bouton-login\" class=\"btn btn-outline-secondary text-white\">Je me déconnecte</button>-->
-                    <button type=\"button\" id=\"bouton-login\" class=\"btn btn-outline-secondary text-white\">Je me connecte</button>
-                </div>
-            </div>
-        </div>
-
-\t\t<nav class=\"log-nav\">
-            
-                <li id=\"root\"></li>
-            {% if is_granted('ROLE_USER') %}
-                <a href=\"{{ path('project_user', {idUser:app.user.id})}}\"><p>Bonjour {{ app.user.nickname }}</p></a>
-                <li><a href=\"{{ path('project_logout')}}\">Déconnection-Track-Mec</a></li>
-
-            {% endif %}
-            {% if is_granted('ROLE_MUSE') %}       
-                <li><a href=\"{{ path('project_create_project')}}\">Crea-Track-Mec</a></li>
-
-            {% else %}    
-               <li><a href=\"{{ path('project_log')}}\">Connection-Track-Mec</a></li>
-                <li><a href=\"{{ path('project_registery')}}\">Inscription-Track-Mec</a></li>
-                
-            {% endif %}
-        </nav>
-
-    </nav>
-
 \t\t\t{% block title %}
 \t\t\t{% endblock %}
 \t\t</title>
@@ -508,10 +495,126 @@ class __TwigTemplate_7030ce1f17aafd29062a64fadeedbfc607fda23489cbc639ebd12b9bb7c
 \t\t{% endblock %}
 \t</head>
 \t<body>
+        <nav class=\"navbar navbar-expand-lg navbar-dark bg-dark sticky-top\" id=\"nav\">
+            <div class=\"container\">
+                <a class=\"navbar-brand\" href=\"#\">
+                    <img src=\"asset/img/logo-entier.png\" alt=\"logo meet makers\" id=\"logo-nav\">
+                </a>
+                <button class=\"navbar-toggler\" type=\"button\" data-bs-toggle=\"collapse\"
+                    data-bs-target=\"#navbarSupportedContent\" aria-controls=\"navbarSupportedContent\" aria-expanded=\"false\"
+                    aria-label=\"Toggle navigation\">
+                    <span class=\"navbar-toggler-icon\"></span>
+                </button>
+                <div class=\"collapse navbar-collapse justify-content-between\" id=\"navbarSupportedContent\">
+                    <ul class=\"navbar-nav me-auto mb-2 mb-lg-0\">
+                        <li class=\"nav-item dropdown\">
+                            <a class=\"nav-link dropdown-toggle ps-2 text-white me-3 text-center\" href=\"#\"
+                                id=\"navbarDropdown\" role=\"button\" data-bs-toggle=\"dropdown\" aria-expanded=\"false\">
+                                Les projets
+                            </a>
+                            <ul class=\"dropdown-menu text-center rounded-3 px-3 py-2\" aria-labelledby=\"navbarDropdown\">
+                                <li><a class=\"dropdown-item text-white\" href=\"#\">Les candidatures ouvertes</a></li>
+                                <li><a class=\"dropdown-item text-white\" href=\"#\">Les votes ouverts</a></li>
+                                <li><a class=\"dropdown-item text-white\" href=\"#\">Les projets clos</a></li>
+                            </ul>
+                        </li>
+                        <li class=\"nav-item dropdown\">
+                            <a class=\"nav-link dropdown-toggle text-white text-center\" href=\"#\" id=\"navbarDropdown\"
+                                role=\"button\" data-bs-toggle=\"dropdown\" aria-expanded=\"false\">
+                                Nos makers
+                            </a>
+                            <ul class=\"dropdown-menu text-center rounded-3 px-3 py-2\" aria-labelledby=\"navbarDropdown\">
+                                <li><a class=\"dropdown-item text-white\" href=\"#\">Nos musiciens</a></li>
+                                <li><a class=\"dropdown-item text-white\" href=\"#\">Nos vidéastes</a></li>
+                            </ul>
+                        </li>
+                    </ul>
 
+                    <div id=\"nav-searchbar\" class=\"dropdown text-white mx-3\">
+                        <input type=\"checkbox\" class=\"checkbox-searchbar mx-auto mx-md-3\">
+                    </div>
+                {% if is_granted('ROLE_MUSE') %}     
+                    <!-- Bouton créer un projet - s'affiche uniquement quand on est connecté en maker -->
+                    <div class=\"text-center\">
+                        <button type=\"button\" id=\"bouton-creer-projet\" class=\"btn rounded-pill mx-3 my-5 px-4 py-2 shadow text-white\">
+                            <a href=\"{{ path('project_create_project')}}\">
+                                Je crée un projet
+                            </a>
+                        </button>
+                    </div>
+                {% else %}  
+                    <div class=\"boutons-registration d-flex justify-content-center my-5 my-md-0\">
+                        <!-- Button trigger modal -->
+                        <button type=\"button\" id=\"bouton-registration\" class=\"btn btn-outline-primary me-5 me-md-2\"
+                            data-bs-toggle=\"modal\" data-bs-target=\"#exampleModal\">
+                            Je m'inscris
+                        </button>
 
-\t\t{% block body %}
+                        <!-- Modal -->
+                        <div class=\"modal fade\" id=\"exampleModal\" tabindex=\"-1\" aria-labelledby=\"exampleModalLabel\"
+                            aria-hidden=\"true\">
+                            <div class=\"modal-dialog\" role=\"document\">
+                                <div class=\"modal-content\">
+                                    <div class=\"modal-header\">
+                                        <h3 class=\"modal-title text-center text-white mx-5 my-3\" id=\"exampleModalLabel\">
+                                            Rejoins la communauté des makers !
+                                        </h3>
+                                        <button type=\"button\" class=\"btn-close text-white mx-auto\" data-bs-dismiss=\"modal\"
+                                            aria-label=\"Close\">
+                                        </button>
+                                    </div>
 
+                                    <div class=\"modal-body d-flex flex-column justify-content-center mt-4 mb-5\">
+                                        <div id=\"inscription-maker\" class=\"mx-auto\">
+                                            <a href=\"{{  path('project_regist_makers')}}\" id=\"bouton-modale-maker\"
+                                                class=\"text-center rounded-pill px-2 py-3 text-white shadow\">
+                                                Je veux poster un projet
+                                            </a>
+                                        </div>
+                                        <p id=\"modale-choix\" class=\"text-center my-5\">ou bien</p>
+                                        <div id=\"inscription-votant\" class=\"mx-auto\">
+                                            <a href=\"{{  path('project_regist_votant')}}\" id=\"bouton-modale-votant\"class=\"text-center rounded-pill px-2 py-3 text-white shadow\">
+                                                Je veux voter pour un projet
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>    
+                            </div>
+                        </div>
+                        <button role=\"button\" id=\"bouton-login\" class=\"btn btn-outline-secondary text-white\" ><a href=\"{{ path('project_log')}}\">Je me
+                            connecte</a>
+                        </button>
+                {% endif %}
+                    {% if is_granted('ROLE_USER') %}
+                        <!--Quand makers connecté :-->
+                        <a href=\"{{ path('project_user', {idUser:app.user.id})}}\" id=\"profil-maker\" class=\"mx-3\">
+                            <img src=\"asset/icones/icone-user-casque.svg\" class=\"me-3\">{{ app.user.nickname }} - profil
+                        </a>
+                        <button type=\"button\" id=\"bouton-login\" class=\"btn btn-outline-secondary text-white mx-3\">
+                            <a href=\"{{ path('project_logout')}}\">
+                                Je me déconnecte
+                            </a>
+                        </button>
+                    {% endif %}
+                    </div>
+                </div>
+            </div>
+            <nav class=\"log-nav\">
+            
+                    <li id=\"root\"></li>
+                
+
+                
+                      
+
+                 
+
+                    
+                
+            </nav>
+        </nav>
+        {% block body %}
+            
 \t\t{% endblock %}
 
 

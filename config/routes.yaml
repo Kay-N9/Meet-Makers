@@ -1,5 +1,5 @@
 project_main_home:
-   path: /
+   path: /home
    controller: App\Controller\HomeController::index
 
 ######################################################### USER ####################################################
@@ -45,6 +45,11 @@ project_create_project_middle:
    requirements:
      idArticle: '\d+'
 
+project_create_project_end:
+   path: /creation_projet_fin/{idProject}
+   controller: App\Controller\ProjectController::create3
+   requirements:
+     idArticle: '\d+'
 project_project_confirmation:
    path: /confirmaion/{idProject}
    controller: App\Controller\ProjectController::Confirmation

@@ -95,12 +95,12 @@ class Project
         return $this->id;
     }
 
-    public function getDateLacement(): ?\DateTimeInterface
+    public function getDateLancement(): ?\DateTimeInterface
     {
         return $this->dateLancement;
     }
 
-    public function setDateLacement(\DateTimeInterface $dateLancement): self
+    public function setDateLancement(\DateTimeInterface $dateLancement): self
     {
         $this->dateLancement = $dateLancement;
 
