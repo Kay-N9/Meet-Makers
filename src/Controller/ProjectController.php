@@ -5,26 +5,19 @@ namespace App\Controller;
 
 use App\Entity\Status;
 use App\Entity\Project;
-<<<<<<< HEAD
-=======
 use Doctrine\ORM\Mapping\Id;
 use App\Form\ProjectFormType;
 use App\Form\ProjectFormType2;
 use Symfony\Component\Filesystem\Path;
 use Doctrine\Persistence\ManagerRegistry;
 use Symfony\Component\Filesystem\Filesystem;
->>>>>>> c6d2957d6c9d03f1a0728f21eae8029f50e945c6
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Component\Form\Test\FormBuilderInterface;
-<<<<<<< HEAD
-use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
-=======
 use Symfony\Component\Filesystem\Exception\IOExceptionInterface;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 
->>>>>>> c6d2957d6c9d03f1a0728f21eae8029f50e945c6
 
 class ProjectController extends AbstractController
 {
@@ -42,13 +35,9 @@ class ProjectController extends AbstractController
      */
     public function index(Request $request)
     {
-<<<<<<< HEAD
-        $this->denyAccessUnlessGranted('ROLE_MAKER');
-=======
         $this->denyAccessUnlessGranted('ROLE_MUSE');
        
         
->>>>>>> c6d2957d6c9d03f1a0728f21eae8029f50e945c6
 
         $project = new Project() ;
         
@@ -119,9 +108,18 @@ class ProjectController extends AbstractController
 
             // dd($project);
         
-            $filesystem = new Filesystem();
+        
 
-            $file = $form->get('uploadProject')->getData();
+            $sond = $form->get('uploadProject')->getData();
+            // On génère un nouveau nom de fichier
+            $fichier = md5(uniqid()). '.'. $sond->guessExtension();
+            // On copie le fichier dans le dossier uploads
+            $sond->move(
+                $this->getParameter('sond_directory'),
+                $fichier
+            );
+            // On stocke l'image dans la base de donée (son nom)
+            
 
             $em = $this->doctrine->getManager();
 

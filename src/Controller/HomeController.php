@@ -1,3 +1,12 @@
+<<<<<<< HEAD
+<?php
+
+namespace App\Controller;
+
+use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
+use Symfony\Component\HttpFoundation\Response;
+use Symfony\Component\Routing\Annotation\Route;
+=======
 <?php
 
 namespace App\Controller;
@@ -31,3 +40,4 @@ class HomeController extends AbstractController
 
 }
 
+>>>>>>> ed9c2708c81582455f6d770aa7b4d0f3f39a5e62
