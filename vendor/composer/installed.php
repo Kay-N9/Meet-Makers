@@ -5,7 +5,7 @@
         'type' => 'project',
         'install_path' => __DIR__ . '/../../',
         'aliases' => array(),
-        'reference' => 'abce180bca4c7ea0cdd4a9acbef519de956f8817',
+        'reference' => 'd91eeb34fa9972e3aa4a7bb6c1ce3c212b02c8df',
         'name' => '__root__',
         'dev' => true,
     ),
@@ -16,7 +16,7 @@
             'type' => 'project',
             'install_path' => __DIR__ . '/../../',
             'aliases' => array(),
-            'reference' => 'abce180bca4c7ea0cdd4a9acbef519de956f8817',
+            'reference' => 'd91eeb34fa9972e3aa4a7bb6c1ce3c212b02c8df',
             'dev_requirement' => false,
         ),
         'doctrine/annotations' => array(
@@ -800,7 +800,7 @@
             'install_path' => __DIR__ . '/../symfony/web-profiler-bundle',
             'aliases' => array(),
             'reference' => '1497b1d22c2807a77563439f8ec489407a989d59',
-            'dev_requirement' => true,
+            'dev_requirement' => false,
         ),
         'symfony/webpack-encore-bundle' => array(
             'pretty_version' => 'v1.14.0',

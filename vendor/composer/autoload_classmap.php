@@ -10,7 +10,6 @@ return array(
     'App\\Controller\\CandidateController' => $baseDir . '/src/Controller/CandidateController.php',
     'App\\Controller\\CroneController' => $baseDir . '/src/Controller/CroneController.php',
     'App\\Controller\\HomeController' => $baseDir . '/src/Controller/HomeController.php',
-    'App\\Controller\\PortfolioController' => $baseDir . '/src/Controller/PortfolioController.php',
     'App\\Controller\\ProjectController' => $baseDir . '/src/Controller/ProjectController.php',
     'App\\Controller\\RegistrationController' => $baseDir . '/src/Controller/RegistrationController.php',
     'App\\Controller\\SecurityController' => $baseDir . '/src/Controller/SecurityController.php',
