@@ -108,8 +108,10 @@ class ProjectController extends AbstractController
             $image = $form->get('uploadPicture')->getData();
 
             // On génère un nouveau nom de fichier
-            $fichier_son = md5(uniqid()). '.'. $sond->guessExtension();
-            $fichier_img = md5(uniqid()). '.'. $image->guessExtension();
+            $fichier_son = pathinfo($sond->getClientOriginalName(), PATHINFO_FILENAME);
+            // md5(uniqid()). '.'. $sond->guessExtension();
+            $fichier_img = pathinfo($image->getClientOriginalName(), PATHINFO_FILENAME);
+            //  md5(uniqid()). '.'. $image->guessExtension();
 
             // On copie le fichier dans le dossier uploads
             $sond->move(

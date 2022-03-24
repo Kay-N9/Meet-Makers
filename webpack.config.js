@@ -1,4 +1,4 @@
-<<<<<<< HEAD
+ HEAD
 const Encore = require('@symfony/webpack-encore');
 
 // Manually configure the runtime environment if not already configured yet by the "encore" command.
@@ -71,7 +71,7 @@ Encore
 ;
 
 module.exports = Encore.getWebpackConfig();
-=======
+
 const Encore = require('@symfony/webpack-encore');
 
 // Manually configure the runtime environment if not already configured yet by the "encore" command.
@@ -96,10 +96,10 @@ Encore
      */
     .addEntry('app', './assets/app.js')
 
-<<<<<<< HEAD
+ HEAD
 
-=======
->>>>>>> abce180bca4c7ea0cdd4a9acbef519de956f8817
+
+ abce180bca4c7ea0cdd4a9acbef519de956f8817
     // When enabled, Webpack "splits" your files into smaller pieces for greater optimization.
     .splitEntryChunks()
 
@@ -148,4 +148,4 @@ Encore
 ;
 
 module.exports = Encore.getWebpackConfig();
->>>>>>> ed9c2708c81582455f6d770aa7b4d0f3f39a5e62
+ ed9c2708c81582455f6d770aa7b4d0f3f39a5e62
