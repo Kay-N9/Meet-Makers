@@ -22,7 +22,7 @@ use SymfonyCasts\Bundle\VerifyEmail\Exception\VerifyEmailExceptionInterface;
 
 class RegistrationController extends AbstractController
 {
-    private EmailVerifier $emailVerifier;
+    // private EmailVerifier $emailVerifier;
 
     public function __construct(EmailVerifier $emailVerifier)
     {
@@ -43,54 +43,62 @@ class RegistrationController extends AbstractController
     /**
      * @Route("/register/{type}", name="app_register")
      */
-    public function register(string $type,Request $request, UserPasswordHasherInterface $userPasswordHasher, EntityManagerInterface $entityManager, UserTypeRepository $userTypeRepository): Response
+    public function register(string $type, Request $request, UserPasswordHasherInterface $userPasswordHasher, EntityManagerInterface $entityManager, UserTypeRepository $userTypeRepository): Response
     {
         $user = new User();
         $form = $this->createForm(RegistrationFormType::class, $user);
-        if($type == 'complete'){
-            $form->add('firstName',TextType::class,
+        if ($type == 'complete') {
+            $form->add(
+                'firstName',
+                TextType::class,
                 [
-                    'required'=> true,
+                    'required' => true,
                 ],
             );
-            $form->add('lastName',TextType::class,
+            $form->add(
+                'lastName',
+                TextType::class,
                 [
-                    'required'=> true,
+                    'required' => true,
                 ],
             );
-            $form->add('city',TextType::class,
+            $form->add(
+                'city',
+                TextType::class,
                 [
-                    'required'=> true,
+                    'required' => true,
                 ],
             );
-            $form->add('userType',EntityType::class, 
-                    [
-                        'class' => UserType::class,
-                        'choice_label' =>'name',
-                        'expanded'=> true, 
-                        'multiple'=> false,
-                        'required'=> true,
-                    ],
-                );
+            $form->add(
+                'userType',
+                EntityType::class,
+                [
+                    'class' => UserType::class,
+                    'choice_label' => 'name',
+                    'expanded' => true,
+                    'multiple' => false,
+                    'required' => true,
+                ],
+            );
         }
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
             // encode the plain password
             $user->setPassword(
-            $userPasswordHasher->hashPassword(
+                $userPasswordHasher->hashPassword(
                     $user,
                     $form->get('plainPassword')->getData()
                 )
             );
-            if($type == 'rapide'){
+            if ($type == 'rapide') {
                 $user->setUserType($userTypeRepository->find(1));
             }
-           
+
             switch ($user->getUserType()->getId()) {
-                // case 1:
-                //     user->setRoles(["ROLE_USER", "ROLE_MUS"]);
-                //     break;
+                    // case 1:
+                    //     user->setRoles(["ROLE_USER", "ROLE_MUS"]);
+                    //     break;
                 case 2:
                     $user->setRoles(["ROLE_USER", "ROLE_MUSE"]);
                     break;
@@ -122,8 +130,7 @@ class RegistrationController extends AbstractController
             'registrationForm' => $form->createView(),
         ]);
     }
-
-    }
+}
     // /**
     //  * @Route("/verify/email", name="app_verify_email")
     //  */
@@ -145,4 +152,3 @@ class RegistrationController extends AbstractController
 
     //     return $this->redirectToRoute('app_register');
     // }
-
