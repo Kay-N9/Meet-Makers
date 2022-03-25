@@ -72,7 +72,7 @@ class __TwigTemplate_7030ce1f17aafd29062a64fadeedbfc607fda23489cbc639ebd12b9bb7c
     <title>Meet Makers</title>
 </head>               
 
-\t\t<!------------------------ DEBUT NAVBAR ------------------------>
+\t\t
 
 \t\t\t";
         // line 27
@@ -97,9 +97,13 @@ class __TwigTemplate_7030ce1f17aafd29062a64fadeedbfc607fda23489cbc639ebd12b9bb7c
         // line 40
         echo "\t</head>
 \t<body>
+    <!------------------------ DEBUT NAVBAR PROPRE------------------------>
         <nav class=\"navbar navbar-expand-lg navbar-dark bg-dark sticky-top\" id=\"nav\">
             <div class=\"container\">
-                <a class=\"navbar-brand\" href=\"#\">
+                <a class=\"navbar-brand\" href=\"";
+        // line 45
+        echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("project_main_home");
+        echo "\">
                     <img src=\"asset/img/logo-entier.png\" alt=\"logo meet makers\" id=\"logo-nav\">
                 </a>
                 <button class=\"navbar-toggler\" type=\"button\" data-bs-toggle=\"collapse\"
@@ -136,14 +140,14 @@ class __TwigTemplate_7030ce1f17aafd29062a64fadeedbfc607fda23489cbc639ebd12b9bb7c
                         <input type=\"checkbox\" class=\"checkbox-searchbar mx-auto mx-md-3\">
                     </div>
                 ";
-        // line 80
+        // line 81
         if ($this->extensions['Symfony\Bridge\Twig\Extension\SecurityExtension']->isGranted("ROLE_MUSE")) {
             echo "     
                     <!-- Bouton créer un projet - s'affiche uniquement quand on est connecté en maker -->
                     <div class=\"text-center\">
                         <button type=\"button\" id=\"bouton-creer-projet\" class=\"btn rounded-pill mx-3 my-5 px-4 py-2 shadow text-white\">
                             <a href=\"";
-            // line 84
+            // line 85
             echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("project_create_project");
             echo "\">
                                 Je crée un projet
@@ -152,7 +156,7 @@ class __TwigTemplate_7030ce1f17aafd29062a64fadeedbfc607fda23489cbc639ebd12b9bb7c
                     </div>
                 ";
         } else {
-            // line 89
+            // line 90
             echo "  
                     <div class=\"boutons-registration d-flex justify-content-center my-5 my-md-0\">
                         <!-- Button trigger modal -->
@@ -178,7 +182,7 @@ class __TwigTemplate_7030ce1f17aafd29062a64fadeedbfc607fda23489cbc639ebd12b9bb7c
                                     <div class=\"modal-body d-flex flex-column justify-content-center mt-4 mb-5\">
                                         <div id=\"inscription-maker\" class=\"mx-auto\">
                                             <a href=\"";
-            // line 113
+            // line 114
             echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("project_regist_makers");
             echo "\" id=\"bouton-modale-maker\"
                                                 class=\"text-center rounded-pill px-2 py-3 text-white shadow\">
@@ -188,7 +192,7 @@ class __TwigTemplate_7030ce1f17aafd29062a64fadeedbfc607fda23489cbc639ebd12b9bb7c
                                         <p id=\"modale-choix\" class=\"text-center my-5\">ou bien</p>
                                         <div id=\"inscription-votant\" class=\"mx-auto\">
                                             <a href=\"";
-            // line 120
+            // line 121
             echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("project_regist_votant");
             echo "\" id=\"bouton-modale-votant\"class=\"text-center rounded-pill px-2 py-3 text-white shadow\">
                                                 Je veux voter pour un projet
@@ -199,30 +203,30 @@ class __TwigTemplate_7030ce1f17aafd29062a64fadeedbfc607fda23489cbc639ebd12b9bb7c
                             </div>
                         </div>
                         <button role=\"button\" id=\"bouton-login\" class=\"btn btn-outline-secondary text-white\" ><a href=\"";
-            // line 128
+            // line 129
             echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("project_log");
             echo "\">Je me
                             connecte</a>
                         </button>
                 ";
         }
-        // line 132
+        // line 133
         echo "                    ";
         if ($this->extensions['Symfony\Bridge\Twig\Extension\SecurityExtension']->isGranted("ROLE_USER")) {
-            // line 133
+            // line 134
             echo "                        <!--Quand makers connecté :-->
                         <a href=\"";
-            // line 134
-            echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("project_user", ["idUser" => twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 134, $this->source); })()), "user", [], "any", false, false, false, 134), "id", [], "any", false, false, false, 134)]), "html", null, true);
+            // line 135
+            echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("project_user", ["idUser" => twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 135, $this->source); })()), "user", [], "any", false, false, false, 135), "id", [], "any", false, false, false, 135)]), "html", null, true);
             echo "\" id=\"profil-maker\" class=\"mx-3\">
                             <img src=\"asset/icones/icone-user-casque.svg\" class=\"me-3\">";
-            // line 135
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 135, $this->source); })()), "user", [], "any", false, false, false, 135), "nickname", [], "any", false, false, false, 135), "html", null, true);
+            // line 136
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 136, $this->source); })()), "user", [], "any", false, false, false, 136), "nickname", [], "any", false, false, false, 136), "html", null, true);
             echo " - profil
                         </a>
                         <button type=\"button\" id=\"bouton-login\" class=\"btn btn-outline-secondary text-white mx-3\">
                             <a href=\"";
-            // line 138
+            // line 139
             echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("project_logout");
             echo "\">
                                 Je me déconnecte
@@ -230,33 +234,22 @@ class __TwigTemplate_7030ce1f17aafd29062a64fadeedbfc607fda23489cbc639ebd12b9bb7c
                         </button>
                     ";
         }
-        // line 143
+        // line 144
         echo "                    </div>
                 </div>
-            </div>
-            <nav class=\"log-nav\">
-            
-                    <li id=\"root\"></li>
-                
-
-                
-                      
-
-                 
-
-                    
-                
-            </nav>
-        </nav>
+            </div>            
         ";
-        // line 160
+        // line 148
+        echo "        </nav>
+        ";
+        // line 149
         $this->displayBlock('body', $context, $blocks);
-        // line 163
+        // line 152
         echo "
 
 Ò
 \t\t";
-        // line 166
+        // line 155
         $this->displayBlock('footer', $context, $blocks);
         
         $__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e->leave($__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e_prof);
@@ -329,7 +322,7 @@ class __TwigTemplate_7030ce1f17aafd29062a64fadeedbfc607fda23489cbc639ebd12b9bb7c
 
     }
 
-    // line 160
+    // line 149
     public function block_body($context, array $blocks = [])
     {
         $macros = $this->macros;
@@ -339,7 +332,7 @@ class __TwigTemplate_7030ce1f17aafd29062a64fadeedbfc607fda23489cbc639ebd12b9bb7c
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02 = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "body"));
 
-        // line 161
+        // line 150
         echo "            
 \t\t";
         
@@ -350,7 +343,7 @@ class __TwigTemplate_7030ce1f17aafd29062a64fadeedbfc607fda23489cbc639ebd12b9bb7c
 
     }
 
-    // line 166
+    // line 155
     public function block_footer($context, array $blocks = [])
     {
         $macros = $this->macros;
@@ -360,7 +353,7 @@ class __TwigTemplate_7030ce1f17aafd29062a64fadeedbfc607fda23489cbc639ebd12b9bb7c
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02 = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "footer"));
 
-        // line 167
+        // line 156
         echo "
 
 
@@ -449,7 +442,7 @@ class __TwigTemplate_7030ce1f17aafd29062a64fadeedbfc607fda23489cbc639ebd12b9bb7c
 
     public function getDebugInfo()
     {
-        return array (  364 => 167,  354 => 166,  343 => 161,  333 => 160,  320 => 38,  310 => 37,  300 => 35,  290 => 34,  280 => 28,  270 => 27,  260 => 166,  255 => 163,  253 => 160,  234 => 143,  226 => 138,  220 => 135,  216 => 134,  213 => 133,  210 => 132,  203 => 128,  192 => 120,  182 => 113,  156 => 89,  147 => 84,  140 => 80,  98 => 40,  96 => 37,  93 => 36,  91 => 34,  86 => 33,  81 => 29,  79 => 27,  63 => 14,  48 => 1,);
+        return array (  357 => 156,  347 => 155,  336 => 150,  326 => 149,  313 => 38,  303 => 37,  293 => 35,  283 => 34,  273 => 28,  263 => 27,  253 => 155,  248 => 152,  246 => 149,  243 => 148,  238 => 144,  230 => 139,  224 => 136,  220 => 135,  217 => 134,  214 => 133,  207 => 129,  196 => 121,  186 => 114,  160 => 90,  151 => 85,  144 => 81,  105 => 45,  98 => 40,  96 => 37,  93 => 36,  91 => 34,  86 => 33,  81 => 29,  79 => 27,  63 => 14,  48 => 1,);
     }
 
     public function getSourceContext()
@@ -478,7 +471,7 @@ class __TwigTemplate_7030ce1f17aafd29062a64fadeedbfc607fda23489cbc639ebd12b9bb7c
     <title>Meet Makers</title>
 </head>               
 
-\t\t<!------------------------ DEBUT NAVBAR ------------------------>
+\t\t
 
 \t\t\t{% block title %}
 \t\t\t{% endblock %}
@@ -495,9 +488,10 @@ class __TwigTemplate_7030ce1f17aafd29062a64fadeedbfc607fda23489cbc639ebd12b9bb7c
 \t\t{% endblock %}
 \t</head>
 \t<body>
+    <!------------------------ DEBUT NAVBAR PROPRE------------------------>
         <nav class=\"navbar navbar-expand-lg navbar-dark bg-dark sticky-top\" id=\"nav\">
             <div class=\"container\">
-                <a class=\"navbar-brand\" href=\"#\">
+                <a class=\"navbar-brand\" href=\"{{path('project_main_home')}}\">
                     <img src=\"asset/img/logo-entier.png\" alt=\"logo meet makers\" id=\"logo-nav\">
                 </a>
                 <button class=\"navbar-toggler\" type=\"button\" data-bs-toggle=\"collapse\"
@@ -598,20 +592,8 @@ class __TwigTemplate_7030ce1f17aafd29062a64fadeedbfc607fda23489cbc639ebd12b9bb7c
                     {% endif %}
                     </div>
                 </div>
-            </div>
-            <nav class=\"log-nav\">
-            
-                    <li id=\"root\"></li>
-                
-
-                
-                      
-
-                 
-
-                    
-                
-            </nav>
+            </div>            
+        {# <li id=\"root\"></li> #}
         </nav>
         {% block body %}
             

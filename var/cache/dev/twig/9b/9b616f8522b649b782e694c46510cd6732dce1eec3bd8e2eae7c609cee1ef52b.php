@@ -67,14 +67,9 @@ class __TwigTemplate_77c823e3a8b06e9b9fa9195ed2ef6234f8311024eaccb78c36a180f2c64
 
         // line 4
         echo "    <head>
-        <!-- Required meta tags -->
-        <meta charset=\"utf-8\">
-        <meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">
-
-        <!-- Bootstrap CSS -->
-        <link href=\"https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css\" rel=\"stylesheet\"
-            integrity=\"sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3\" crossorigin=\"anonymous\">
-
+        ";
+        // line 12
+        echo "
         <!-- Fichier CSS -->
         <link rel=\"stylesheet\" href=";
         // line 14
@@ -85,8 +80,9 @@ class __TwigTemplate_77c823e3a8b06e9b9fa9195ed2ef6234f8311024eaccb78c36a180f2c64
 
 
         <!-- Font Awesome #######Ò-->
-        <script src=\"https://kit.fontawesome.com/0a79214c99.js\" crossorigin=\"anonymous\"></script>
-
+        ";
+        // line 21
+        echo "
         <title>Meet Makers - Log in!</title>
 </head> 
 ";
@@ -184,7 +180,7 @@ class __TwigTemplate_77c823e3a8b06e9b9fa9195ed2ef6234f8311024eaccb78c36a180f2c64
 
     public function getDebugInfo()
     {
-        return array (  161 => 61,  155 => 48,  145 => 41,  139 => 37,  131 => 34,  128 => 33,  126 => 32,  123 => 31,  117 => 29,  115 => 28,  112 => 27,  102 => 26,  81 => 14,  69 => 4,  59 => 3,  36 => 1,);
+        return array (  157 => 61,  151 => 48,  141 => 41,  135 => 37,  127 => 34,  124 => 33,  122 => 32,  119 => 31,  113 => 29,  111 => 28,  108 => 27,  98 => 26,  85 => 21,  76 => 14,  72 => 12,  69 => 4,  59 => 3,  36 => 1,);
     }
 
     public function getSourceContext()
@@ -193,13 +189,13 @@ class __TwigTemplate_77c823e3a8b06e9b9fa9195ed2ef6234f8311024eaccb78c36a180f2c64
 
 {% block title %}
     <head>
-        <!-- Required meta tags -->
+        {# <!-- Required meta tags -->
         <meta charset=\"utf-8\">
         <meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">
 
         <!-- Bootstrap CSS -->
         <link href=\"https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css\" rel=\"stylesheet\"
-            integrity=\"sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3\" crossorigin=\"anonymous\">
+            integrity=\"sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3\" crossorigin=\"anonymous\"> #}
 
         <!-- Fichier CSS -->
         <link rel=\"stylesheet\" href={{asset('asset/css/style-formulaire-inscription-maker.css')}}>
@@ -208,7 +204,7 @@ class __TwigTemplate_77c823e3a8b06e9b9fa9195ed2ef6234f8311024eaccb78c36a180f2c64
 
 
         <!-- Font Awesome #######Ò-->
-        <script src=\"https://kit.fontawesome.com/0a79214c99.js\" crossorigin=\"anonymous\"></script>
+        {# <script src=\"https://kit.fontawesome.com/0a79214c99.js\" crossorigin=\"anonymous\"></script> #}
 
         <title>Meet Makers - Log in!</title>
 </head> 

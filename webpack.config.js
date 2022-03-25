@@ -1,4 +1,4 @@
-HEAD
+
 const Encore = require('@symfony/webpack-encore');
 
 // Manually configure the runtime environment if not already configured yet by the "encore" command.
@@ -96,7 +96,6 @@ Encore
      */
     .addEntry('app', './assets/app.js')
 
-HEAD
 
 
 abce180bca4c7ea0cdd4a9acbef519de956f8817

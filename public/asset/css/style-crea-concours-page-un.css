@@ -606,7 +606,7 @@ main input{
     margin-top: 100px;
 }
 
-#desc-projet{
+#project_form_Description{
     background-color: rgba(251, 247, 251, 0.06) !important;
     border-radius: 50px !important; 
     border: 1px solid var(--meet-white) !important;
@@ -746,4 +746,9 @@ main input{
 
 #footer hr {
     color: var(--meet-white);
+}
+
+a{
+    color: white;
+    text-decoration: none;
 }

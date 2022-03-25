@@ -198,10 +198,10 @@ return [[
 '[C]App%5CEntity%5CProject%23__construct' => 1,
 'App%5CEntity%5CProject%23getId' => 0,
 '[C]App%5CEntity%5CProject%23getId' => 1,
-'App%5CEntity%5CProject%23getDateLacement' => 0,
-'[C]App%5CEntity%5CProject%23getDateLacement' => 1,
-'App%5CEntity%5CProject%23setDateLacement' => 0,
-'[C]App%5CEntity%5CProject%23setDateLacement' => 1,
+'App%5CEntity%5CProject%23getDateLancement' => 0,
+'[C]App%5CEntity%5CProject%23getDateLancement' => 1,
+'App%5CEntity%5CProject%23setDateLancement' => 0,
+'[C]App%5CEntity%5CProject%23setDateLancement' => 1,
 'App%5CEntity%5CProject%23getUploadProject' => 0,
 '[C]App%5CEntity%5CProject%23getUploadProject' => 1,
 'App%5CEntity%5CProject%23setUploadProject' => 0,
@@ -462,6 +462,8 @@ return [[
 '[C]App%5CEntity%5CUserType%23addUser' => 1,
 'App%5CEntity%5CUserType%23removeUser' => 0,
 '[C]App%5CEntity%5CUserType%23removeUser' => 1,
+'App%5CEntity%5CUserType%23getLabel' => 0,
+'[C]App%5CEntity%5CUserType%23getLabel' => 1,
 'App%5CEntity%5CUserType%24id' => 13,
 '[C]App%5CEntity%5CUserType%24id' => 1,
 'App%5CEntity%5CUserType%24name' => 15,
@@ -1040,7 +1042,7 @@ return [[
 ], [
 
 0 => [],
-1 => 1648122607,
+1 => 1648201489,
 2 => static function () {
     return \Symfony\Component\VarExporter\Internal\Hydrator::hydrate(
         $o = [

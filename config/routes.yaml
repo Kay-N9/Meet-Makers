@@ -3,11 +3,6 @@ project_main_home:
    controller: App\Controller\HomeController::index
 
 ######################################################### USER ####################################################
-
-project_registery:
-   path: /registerlink
-   controller: App\Controller\RegistrationController::registerlink
-
 project_regist_makers:
    path: /register/complete
    controller: App\Controller\RegistrationController::register

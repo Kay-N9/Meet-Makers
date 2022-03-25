@@ -10,7 +10,10 @@ return [
     [ // $staticRoutes
         '/candidate' => [[['_route' => 'app_candidate', '_controller' => 'App\\Controller\\CandidateController::index'], null, null, null, false, false, null]],
         '/crone' => [[['_route' => 'app_crone', '_controller' => 'App\\Controller\\CroneController::index'], null, null, null, false, false, null]],
-        '/home' => [[['_route' => 'app_home', '_controller' => 'App\\Controller\\HomeController::index'], null, null, null, false, false, null]],
+        '/home' => [
+            [['_route' => 'app_home', '_controller' => 'App\\Controller\\HomeController::index'], null, null, null, false, false, null],
+            [['_route' => 'project_main_home', '_controller' => 'App\\Controller\\HomeController::index'], null, null, null, false, false, null],
+        ],
         '/project' => [[['_route' => 'app_project', '_controller' => 'App\\Controller\\ProjectController::create'], null, null, null, false, false, null]],
         '/login' => [
             [['_route' => 'app_login', '_controller' => 'App\\Controller\\SecurityController::login'], null, null, null, false, false, null],
@@ -27,8 +30,6 @@ return [
         '/_profiler/search_bar' => [[['_route' => '_profiler_search_bar', '_controller' => 'web_profiler.controller.profiler::searchBarAction'], null, null, null, false, false, null]],
         '/_profiler/phpinfo' => [[['_route' => '_profiler_phpinfo', '_controller' => 'web_profiler.controller.profiler::phpinfoAction'], null, null, null, false, false, null]],
         '/_profiler/open' => [[['_route' => '_profiler_open_file', '_controller' => 'web_profiler.controller.profiler::openAction'], null, null, null, false, false, null]],
-        '/' => [[['_route' => 'project_main_home', '_controller' => 'App\\Controller\\HomeController::index'], null, null, null, false, false, null]],
-        '/registerlink' => [[['_route' => 'project_registery', '_controller' => 'App\\Controller\\RegistrationController::registerlink'], null, null, null, false, false, null]],
         '/api_data' => [[['_route' => 'project_rech', '_controller' => 'App\\Controller\\ApiController::getData'], null, null, null, false, false, null]],
         '/creation_projet' => [[['_route' => 'project_create_project', '_controller' => 'App\\Controller\\ProjectController::create'], null, null, null, false, false, null]],
     ],
