@@ -43,7 +43,7 @@
         <nav class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top" id="nav">
             <div class="container">
                 <a class="navbar-brand" href="{{path('project_main_home')}}">
-                    <img src="asset/img/logo-entier.png" alt="logo meet makers" id="logo-nav">
+                    <img src="../asset/img/logo-entier.png" alt="logo meet makers" id="logo-nav">
                 </a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
                     data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
@@ -130,16 +130,24 @@
                             connecte</a>
                         </button>
                 {% endif %}
-                    {% if is_granted('ROLE_USER') %}
+                {# {% if is_granted('ROLE_USER')%} #}
+                        
+                
+                    {% if is_granted('ROLE_MUSE') %}
                         <!--Quand makers connecté :-->
                         <a href="{{ path('project_user', {idUser:app.user.id})}}" id="profil-maker" class="mx-3">
-                            <img src="asset/icones/icone-user-casque.svg" class="me-3">{{ app.user.nickname }} - profil
+                            <img src="../asset/icones/icone-user-casque.svg" class="me-3">{{ app.user.nickname }} - profil
                         </a>
                         <button type="button" id="bouton-login" class="btn btn-outline-secondary text-white mx-3">
                             <a href="{{ path('project_logout')}}">
                                 Je me déconnecte
                             </a>
                         </button>
+                    {% else %}   
+                        <a href="{{ path('project_user', {idUser:app.user.id})}}" id="profil-maker" class="mx-3">
+                            <img src="../asset/icones/icone-user.svg" class="me-3">{{ app.user.nickname }} - profil
+                        </a>
+                        
                     {% endif %}
                     </div>
                 </div>
@@ -162,17 +170,17 @@
             <div class="row row-cols-4 mt-5">
                 <div class="col-12 col-md-3">
                     <a href="#" class="d-flex align-items-center mb-3 link-dark text-decoration-none">
-                        <img src="asset/img/logo-entier.png" alt="logo meet makers" id="logo-footer">
+                        <img src="../asset/img/logo-entier.png" alt="logo meet makers" id="logo-footer">
                     </a>
                     <div class="d-flex align-items-center">
                         <a href="#" class="my-3 mx-3 link-dark text-decoration-none">
-                            <img src="asset/icones/icone-facebook.svg" alt="icone facebook" class="social-network">
+                            <img src="../asset/icones/icone-facebook.svg" alt="icone facebook" class="social-network">
                         </a>
                         <a href="#" class="my-3 mx-3 link-dark text-decoration-none">
-                            <img src="asset/icones/icone-twitter.svg" alt="icone twitter" class="social-network">
+                            <img src="../asset/icones/icone-twitter.svg" alt="icone twitter" class="social-network">
                         </a>
                         <a href="#" class="my-3 mx-3 link-dark text-decoration-none">
-                            <img src="asset/icones/icone-insta.svg" alt="icone instragram" class="social-network">
+                            <img src="../asset/icones/icone-insta.svg" alt="icone instragram" class="social-network">
                         </a>
                     </div>
                 </div>

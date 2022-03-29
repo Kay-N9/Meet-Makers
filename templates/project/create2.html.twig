@@ -25,7 +25,8 @@
 
 {% block body %}
 
-<main>
+    <main>
+    {{ form_start(form)}}
         <div class="container">
 
             <div class="col-md-12 wrapper my-5">
@@ -45,12 +46,11 @@
                     <!------------------------ BUDGET ------------------------>
                     <div id="details-budget" class="my-5">
                         <h2 class="text-white mb-3">Budget</h2>
-                        <div class="range-budget my-3">
-                            <span class="span-budget">300</span>
-                            <input class="w-100" type="range" id="budget" name="budget" list="tickmarks" min=300
-                                max=2000>
-                            <span class="span-budget">2000</span>
-
+                        <div class="range-budget my-3 d-flex">
+                            {{ form_widget(form.budget, {'attr':{'class':'w-100','id':'budget','value':'1200','min':'300','max':'2000', 'oninput':'this.nextElementSibling.value = this.value'}}) }}    
+                            
+                             <output class="span-budget">1200€</output>
+                                                        
                         </div>
                     </div>
 
@@ -61,12 +61,18 @@
                             <div class="card-relative mx-auto">
                                 <div class="card-absolute d-flex flex-column justify-content-center align-items-center">
                                     <div class="d-flex flex-column justify-content-center align-items-center">
-                                        <img class="upload mb-3" src="asset/icones/icone-upload-orange.svg"
+                                        <img class="upload mb-3" src={{asset('asset/icones/icone-upload-orange.svg')}}
                                             alt="picto upload">
                                         <p class="depose-police">Dépose le fichier ici</p>
                                         <p class="ou-police">ou</p>
-                                        <button type="button" id="bouton-upload" class="px-3 py-2">Sélectionne un
-                                            fichier</button>
+                                        {{ form_label(form.uploadProject, 'Sélectionne un
+                                            fichier',{'label_attr':{'id':'bouton-upload'}}) }}
+                                        {{form_widget(form.uploadProject, {'attr': {'style':'display:none'}})}}
+                                            
+
+                                        {# <button type="button" id="bouton-upload" class="px-3 py-2">Sélectionne un
+                                            fichier</button> #}
+                                            
                                     </div>
                                 </div>
                             </div>
@@ -77,12 +83,17 @@
                             <div class="card-relative mx-auto">
                                 <div class="card-absolute d-flex flex-column justify-content-center align-items-center">
                                     <div class="d-flex flex-column justify-content-center align-items-center">
-                                        <img class="upload mb-3" src="asset/icones/icone-upload-orange.svg"
+                                        <img class="upload mb-3" src={{asset('asset/icones/icone-upload-orange.svg')}}
                                             alt="picto upload">
                                         <p class="depose-police">Dépose le fichier ici</p>
                                         <p class="ou-police">ou</p>
-                                        <button type="button" id="bouton-upload" class="px-3 py-2">Sélectionne un
-                                            fichier</button>
+                                        
+                                        {{ form_label(form.uploadPicture, 
+                                            'Sélectionne un fichier',
+                                            {'label_attr':{'id':'bouton-upload1'}}) }}
+                                        {{form_widget(form.uploadPicture, {'attr': {'style':'display:none'}})}}
+                                        {# <button type="button" id="boton-upload" class="px-3 py-2">Sélectionne un
+                                            fichier</button> #}
                                     </div>
                                 </div>
                             </div>
@@ -93,6 +104,10 @@
                     <div class="padding-styles my-5">
                         <h2 class="text-white mb-3">Styles associés</h2>
                         <div>
+                            {# {{ form_label(form.style, 'Style', {'label_attr': {'class':'tag'}}) }} #}
+                            {{ form_widget(form.style, {'attr': {'class':'o'}}) }}
+
+                        
                             <div id="tag-style-hiphop" class="tag rounded-pill text-white text-center fs-2 me-3 my-3">
                                 Hiphop
                             </div>
@@ -140,15 +155,30 @@
             </div>
 
         </div>
+        {{ form_end(form) }}
     </main>
-<div class="example-wrapper">
+{# <div class="example-wrapper">
 
-    {{ form_start(form)}}
-
-        {{ form_row(form)}}
+    
         <button type="submit" class="btn">Suivant</button>
-    {{ form_end(form) }}
+    
      <a href="{{ path('project_create_project')}}">Précédent</a>
      
-</div>
+</div> #}
+<script>
+    let inputImg = document.getElementById('project_form_type2_uploadPicture');
+    let fileNameFeild = document.getElementById('bouton-upload1');
+    inputImg.addEventListener('change', function(event){
+        let uploadFileName = event.target.files[0].name;
+        fileNameFeild.textContent = uploadFileName;
+    })
+
+    let inputSond = document.getElementById('project_form_type2_uploadProject');
+    let fileNameFeild1 = document.getElementById('bouton-upload');
+    inputSond.addEventListener('change', function(event){
+        let uploadFileName1 = event.target.files[0].name;
+        fileNameFeild1.textContent = uploadFileName1;
+    })
+</script>
 {% endblock %}
+

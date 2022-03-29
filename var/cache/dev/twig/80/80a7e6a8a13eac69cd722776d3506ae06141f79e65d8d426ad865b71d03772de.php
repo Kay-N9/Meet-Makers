@@ -104,7 +104,7 @@ class __TwigTemplate_7030ce1f17aafd29062a64fadeedbfc607fda23489cbc639ebd12b9bb7c
         // line 45
         echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("project_main_home");
         echo "\">
-                    <img src=\"asset/img/logo-entier.png\" alt=\"logo meet makers\" id=\"logo-nav\">
+                    <img src=\"../asset/img/logo-entier.png\" alt=\"logo meet makers\" id=\"logo-nav\">
                 </a>
                 <button class=\"navbar-toggler\" type=\"button\" data-bs-toggle=\"collapse\"
                     data-bs-target=\"#navbarSupportedContent\" aria-controls=\"navbarSupportedContent\" aria-expanded=\"false\"
@@ -211,45 +211,64 @@ class __TwigTemplate_7030ce1f17aafd29062a64fadeedbfc607fda23489cbc639ebd12b9bb7c
                 ";
         }
         // line 133
-        echo "                    ";
-        if ($this->extensions['Symfony\Bridge\Twig\Extension\SecurityExtension']->isGranted("ROLE_USER")) {
-            // line 134
+        echo "                ";
+        // line 134
+        echo "                        
+                
+                    ";
+        // line 136
+        if ($this->extensions['Symfony\Bridge\Twig\Extension\SecurityExtension']->isGranted("ROLE_MUSE")) {
+            // line 137
             echo "                        <!--Quand makers connecté :-->
                         <a href=\"";
-            // line 135
-            echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("project_user", ["idUser" => twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 135, $this->source); })()), "user", [], "any", false, false, false, 135), "id", [], "any", false, false, false, 135)]), "html", null, true);
+            // line 138
+            echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("project_user", ["idUser" => twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 138, $this->source); })()), "user", [], "any", false, false, false, 138), "id", [], "any", false, false, false, 138)]), "html", null, true);
             echo "\" id=\"profil-maker\" class=\"mx-3\">
-                            <img src=\"asset/icones/icone-user-casque.svg\" class=\"me-3\">";
-            // line 136
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 136, $this->source); })()), "user", [], "any", false, false, false, 136), "nickname", [], "any", false, false, false, 136), "html", null, true);
+                            <img src=\"../asset/icones/icone-user-casque.svg\" class=\"me-3\">";
+            // line 139
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 139, $this->source); })()), "user", [], "any", false, false, false, 139), "nickname", [], "any", false, false, false, 139), "html", null, true);
             echo " - profil
                         </a>
                         <button type=\"button\" id=\"bouton-login\" class=\"btn btn-outline-secondary text-white mx-3\">
                             <a href=\"";
-            // line 139
+            // line 142
             echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("project_logout");
             echo "\">
                                 Je me déconnecte
                             </a>
                         </button>
                     ";
+        } else {
+            // line 146
+            echo "   
+                        <a href=\"";
+            // line 147
+            echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("project_user", ["idUser" => twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 147, $this->source); })()), "user", [], "any", false, false, false, 147), "id", [], "any", false, false, false, 147)]), "html", null, true);
+            echo "\" id=\"profil-maker\" class=\"mx-3\">
+                            <img src=\"../asset/icones/icone-user.svg\" class=\"me-3\">";
+            // line 148
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 148, $this->source); })()), "user", [], "any", false, false, false, 148), "nickname", [], "any", false, false, false, 148), "html", null, true);
+            echo " - profil
+                        </a>
+                        
+                    ";
         }
-        // line 144
+        // line 152
         echo "                    </div>
                 </div>
             </div>            
         ";
-        // line 148
+        // line 156
         echo "        </nav>
         ";
-        // line 149
+        // line 157
         $this->displayBlock('body', $context, $blocks);
-        // line 152
+        // line 160
         echo "
 
 Ò
 \t\t";
-        // line 155
+        // line 163
         $this->displayBlock('footer', $context, $blocks);
         
         $__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e->leave($__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e_prof);
@@ -322,7 +341,7 @@ class __TwigTemplate_7030ce1f17aafd29062a64fadeedbfc607fda23489cbc639ebd12b9bb7c
 
     }
 
-    // line 149
+    // line 157
     public function block_body($context, array $blocks = [])
     {
         $macros = $this->macros;
@@ -332,7 +351,7 @@ class __TwigTemplate_7030ce1f17aafd29062a64fadeedbfc607fda23489cbc639ebd12b9bb7c
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02 = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "body"));
 
-        // line 150
+        // line 158
         echo "            
 \t\t";
         
@@ -343,7 +362,7 @@ class __TwigTemplate_7030ce1f17aafd29062a64fadeedbfc607fda23489cbc639ebd12b9bb7c
 
     }
 
-    // line 155
+    // line 163
     public function block_footer($context, array $blocks = [])
     {
         $macros = $this->macros;
@@ -353,7 +372,7 @@ class __TwigTemplate_7030ce1f17aafd29062a64fadeedbfc607fda23489cbc639ebd12b9bb7c
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02 = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "footer"));
 
-        // line 156
+        // line 164
         echo "
 
 
@@ -363,17 +382,17 @@ class __TwigTemplate_7030ce1f17aafd29062a64fadeedbfc607fda23489cbc639ebd12b9bb7c
             <div class=\"row row-cols-4 mt-5\">
                 <div class=\"col-12 col-md-3\">
                     <a href=\"#\" class=\"d-flex align-items-center mb-3 link-dark text-decoration-none\">
-                        <img src=\"asset/img/logo-entier.png\" alt=\"logo meet makers\" id=\"logo-footer\">
+                        <img src=\"../asset/img/logo-entier.png\" alt=\"logo meet makers\" id=\"logo-footer\">
                     </a>
                     <div class=\"d-flex align-items-center\">
                         <a href=\"#\" class=\"my-3 mx-3 link-dark text-decoration-none\">
-                            <img src=\"asset/icones/icone-facebook.svg\" alt=\"icone facebook\" class=\"social-network\">
+                            <img src=\"../asset/icones/icone-facebook.svg\" alt=\"icone facebook\" class=\"social-network\">
                         </a>
                         <a href=\"#\" class=\"my-3 mx-3 link-dark text-decoration-none\">
-                            <img src=\"asset/icones/icone-twitter.svg\" alt=\"icone twitter\" class=\"social-network\">
+                            <img src=\"../asset/icones/icone-twitter.svg\" alt=\"icone twitter\" class=\"social-network\">
                         </a>
                         <a href=\"#\" class=\"my-3 mx-3 link-dark text-decoration-none\">
-                            <img src=\"asset/icones/icone-insta.svg\" alt=\"icone instragram\" class=\"social-network\">
+                            <img src=\"../asset/icones/icone-insta.svg\" alt=\"icone instragram\" class=\"social-network\">
                         </a>
                     </div>
                 </div>
@@ -442,7 +461,7 @@ class __TwigTemplate_7030ce1f17aafd29062a64fadeedbfc607fda23489cbc639ebd12b9bb7c
 
     public function getDebugInfo()
     {
-        return array (  357 => 156,  347 => 155,  336 => 150,  326 => 149,  313 => 38,  303 => 37,  293 => 35,  283 => 34,  273 => 28,  263 => 27,  253 => 155,  248 => 152,  246 => 149,  243 => 148,  238 => 144,  230 => 139,  224 => 136,  220 => 135,  217 => 134,  214 => 133,  207 => 129,  196 => 121,  186 => 114,  160 => 90,  151 => 85,  144 => 81,  105 => 45,  98 => 40,  96 => 37,  93 => 36,  91 => 34,  86 => 33,  81 => 29,  79 => 27,  63 => 14,  48 => 1,);
+        return array (  376 => 164,  366 => 163,  355 => 158,  345 => 157,  332 => 38,  322 => 37,  312 => 35,  302 => 34,  292 => 28,  282 => 27,  272 => 163,  267 => 160,  265 => 157,  262 => 156,  257 => 152,  250 => 148,  246 => 147,  243 => 146,  235 => 142,  229 => 139,  225 => 138,  222 => 137,  220 => 136,  216 => 134,  214 => 133,  207 => 129,  196 => 121,  186 => 114,  160 => 90,  151 => 85,  144 => 81,  105 => 45,  98 => 40,  96 => 37,  93 => 36,  91 => 34,  86 => 33,  81 => 29,  79 => 27,  63 => 14,  48 => 1,);
     }
 
     public function getSourceContext()
@@ -492,7 +511,7 @@ class __TwigTemplate_7030ce1f17aafd29062a64fadeedbfc607fda23489cbc639ebd12b9bb7c
         <nav class=\"navbar navbar-expand-lg navbar-dark bg-dark sticky-top\" id=\"nav\">
             <div class=\"container\">
                 <a class=\"navbar-brand\" href=\"{{path('project_main_home')}}\">
-                    <img src=\"asset/img/logo-entier.png\" alt=\"logo meet makers\" id=\"logo-nav\">
+                    <img src=\"../asset/img/logo-entier.png\" alt=\"logo meet makers\" id=\"logo-nav\">
                 </a>
                 <button class=\"navbar-toggler\" type=\"button\" data-bs-toggle=\"collapse\"
                     data-bs-target=\"#navbarSupportedContent\" aria-controls=\"navbarSupportedContent\" aria-expanded=\"false\"
@@ -579,16 +598,24 @@ class __TwigTemplate_7030ce1f17aafd29062a64fadeedbfc607fda23489cbc639ebd12b9bb7c
                             connecte</a>
                         </button>
                 {% endif %}
-                    {% if is_granted('ROLE_USER') %}
+                {# {% if is_granted('ROLE_USER')%} #}
+                        
+                
+                    {% if is_granted('ROLE_MUSE') %}
                         <!--Quand makers connecté :-->
                         <a href=\"{{ path('project_user', {idUser:app.user.id})}}\" id=\"profil-maker\" class=\"mx-3\">
-                            <img src=\"asset/icones/icone-user-casque.svg\" class=\"me-3\">{{ app.user.nickname }} - profil
+                            <img src=\"../asset/icones/icone-user-casque.svg\" class=\"me-3\">{{ app.user.nickname }} - profil
                         </a>
                         <button type=\"button\" id=\"bouton-login\" class=\"btn btn-outline-secondary text-white mx-3\">
                             <a href=\"{{ path('project_logout')}}\">
                                 Je me déconnecte
                             </a>
                         </button>
+                    {% else %}   
+                        <a href=\"{{ path('project_user', {idUser:app.user.id})}}\" id=\"profil-maker\" class=\"mx-3\">
+                            <img src=\"../asset/icones/icone-user.svg\" class=\"me-3\">{{ app.user.nickname }} - profil
+                        </a>
+                        
                     {% endif %}
                     </div>
                 </div>
@@ -611,17 +638,17 @@ class __TwigTemplate_7030ce1f17aafd29062a64fadeedbfc607fda23489cbc639ebd12b9bb7c
             <div class=\"row row-cols-4 mt-5\">
                 <div class=\"col-12 col-md-3\">
                     <a href=\"#\" class=\"d-flex align-items-center mb-3 link-dark text-decoration-none\">
-                        <img src=\"asset/img/logo-entier.png\" alt=\"logo meet makers\" id=\"logo-footer\">
+                        <img src=\"../asset/img/logo-entier.png\" alt=\"logo meet makers\" id=\"logo-footer\">
                     </a>
                     <div class=\"d-flex align-items-center\">
                         <a href=\"#\" class=\"my-3 mx-3 link-dark text-decoration-none\">
-                            <img src=\"asset/icones/icone-facebook.svg\" alt=\"icone facebook\" class=\"social-network\">
+                            <img src=\"../asset/icones/icone-facebook.svg\" alt=\"icone facebook\" class=\"social-network\">
                         </a>
                         <a href=\"#\" class=\"my-3 mx-3 link-dark text-decoration-none\">
-                            <img src=\"asset/icones/icone-twitter.svg\" alt=\"icone twitter\" class=\"social-network\">
+                            <img src=\"../asset/icones/icone-twitter.svg\" alt=\"icone twitter\" class=\"social-network\">
                         </a>
                         <a href=\"#\" class=\"my-3 mx-3 link-dark text-decoration-none\">
-                            <img src=\"asset/icones/icone-insta.svg\" alt=\"icone instragram\" class=\"social-network\">
+                            <img src=\"../asset/icones/icone-insta.svg\" alt=\"icone instragram\" class=\"social-network\">
                         </a>
                     </div>
                 </div>

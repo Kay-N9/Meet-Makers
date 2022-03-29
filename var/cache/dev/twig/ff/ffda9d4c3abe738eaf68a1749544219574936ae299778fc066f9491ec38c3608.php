@@ -88,7 +88,7 @@ class __TwigTemplate_a50caa82c19b7d5bfd17b792783ba8cd6c2a702aed6189ebdb30dd35ecd
         // line 22
         echo "
         <title>Meet Makers</title>
-</head> 
+    </head> 
 ";
         
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->leave($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof);
@@ -125,7 +125,7 @@ class __TwigTemplate_a50caa82c19b7d5bfd17b792783ba8cd6c2a702aed6189ebdb30dd35ecd
         // line 32
         echo "
     <main>
-        <nav></nav>
+    
             <form class=\"container wrapper my-5 col-12\">
             ";
         // line 36
@@ -289,14 +289,14 @@ class __TwigTemplate_a50caa82c19b7d5bfd17b792783ba8cd6c2a702aed6189ebdb30dd35ecd
         
         <link rel=\"stylesheet\" href={{asset('asset/css/style-formulaire-inscription-maker.css')}}>
 
-        <link rel=\"stylesheet\" href={{asset('asset/css/style-index.css')}}>
+        <link rel=\"stylesheet\" href={{asset     ('asset/css/style-index.css')}}>
 
 
         <!-- Font Awesome #######Ò-->
         {# <script src=\"https://kit.fontawesome.com/0a79214c99.js\" crossorigin=\"anonymous\"></script> #}
 
         <title>Meet Makers</title>
-</head> 
+    </head> 
 {% endblock %}
 
  
@@ -306,7 +306,7 @@ class __TwigTemplate_a50caa82c19b7d5bfd17b792783ba8cd6c2a702aed6189ebdb30dd35ecd
     {% endfor %}
 
     <main>
-        <nav></nav>
+    
             <form class=\"container wrapper my-5 col-12\">
             {{ form_start(registrationForm) }}
             {% if not registrationForm.firstName is defined %}

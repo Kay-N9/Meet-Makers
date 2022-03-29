@@ -67,7 +67,7 @@ class ProjectController extends AbstractController
             return $this->redirectToRoute('project_create_project_middle', [ 'idProject' => $project->getId(),]);
         }
 
-        return $this->renderForm(
+    return $this->renderForm(
             'project/create.html.twig',
             [
                 "project" => $project,

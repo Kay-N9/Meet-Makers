@@ -83,10 +83,7 @@ body {
 /*********** Fin général ***********/
 
 /************************************* TYPOS *************************************/
-a{
-    text-decoration: none;
-    color: white;
-}
+
 nav a,
 .boutons-registration,
 #bouton-voir-projet {
@@ -756,3 +753,8 @@ h5 {
 }
 
 /*********** FIN RESPONSIVE ***********/
+
+a{
+    text-decoration: none;
+    color: white;
+}

@@ -10,6 +10,8 @@ use Symfony\Bridge\Doctrine\Form\Type\EntityType;
 use Symfony\Component\Validator\Constraints\File;
 use Symfony\Component\OptionsResolver\OptionsResolver;
 use Symfony\Component\Form\Extension\Core\Type\FileType;
+use Symfony\Component\Form\Extension\Core\Type\RadioType;
+use Symfony\Component\Form\Extension\Core\Type\RangeType;
 use Symfony\Component\Form\Extension\Core\Type\NumberType;
 
 class ProjectFormType2 extends AbstractType
@@ -17,11 +19,19 @@ class ProjectFormType2 extends AbstractType
     public function buildForm(FormBuilderInterface $builder, array $options): void
     {
         $builder
-            ->add('budget',NumberType::class,
+            ->add('budget',RangeType::class,
             [
+                'attr' => [
+
+                'min' => 300,
+                'max' => 2000,
+
+                ],
                 'required'=> true,
             ],)
             ->add('uploadProject', FileType::class, [
+                'attr' => [
+                    'class' => 'bouton-upload'],
                 'mapped' => false,
                 'constraints' => [
                     new File([
@@ -35,6 +45,8 @@ class ProjectFormType2 extends AbstractType
                 ]
             ])
             ->add('uploadPicture', FileType::class, [
+                'attr' => [
+                    'class' => 'bouton-upload'],
                 'mapped' => false,
                 'required' => false,
                 'constraints' => [
@@ -55,9 +67,11 @@ class ProjectFormType2 extends AbstractType
                 [
                     'class' => Category::class,
                     'choice_label'  =>'name',
+                    'choice_attr' => function () { return array('class' => 'tag-style-hiphop'); },
                     'expanded'      => true, 
                     'multiple'      => true,
                     'required'      => true,
+                    'label_attr' => ['class' => 'tag']
                 ],
             )
         ;

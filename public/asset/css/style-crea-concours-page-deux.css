@@ -380,18 +380,30 @@ h5 {
 }
 
 /*********** Style musique ***********/
-.tag, .tag-dark {
+.tag, .tag-dark,
+input[type="checkbox"] + label {
     display: inline-block;
     font-family:'Bebas Neue';
     width: 8vw;
     min-width: 100px;
 }
-
-.tag {
+input[type="checkbox"]{
+    display: none;
+}
+.tag-dark,
+input[type="checkbox"] + label {
+    text-align: center!important;
     background-image: var(--meet-purple-gradient);
+    border-radius: 50rem!important;
+    font-size: calc(1.325rem + .9vw)!important;
+    margin: 1rem;
 }
 
-.tag-dark {
+input[type="checkbox"]:hover + label {
+    background-image: var(--meet-black);
+}
+.tag,
+input[type="checkbox"]:checked + label {
     background-color: var(--meet-black);
 }
 
@@ -598,13 +610,16 @@ ul {
     color: var(--meet-orange);
 }
 
-#bouton-upload{
+#bouton-upload,
+#bouton-upload1{
     background-color: var(--meet-dark-purple);
     border: 0;
     font-family:'Proxima-Nova-Regular';
-    font-size: 1.8rem;
+    font-size: 1.5rem;
     color: var(--meet-white);
     border-radius: 5px;
+    padding: 6px;
+    cursor: pointer;
 }
 
 .depose-police{
@@ -621,11 +636,11 @@ ul {
 label{
     color: var(--meet-white);
     text-transform: uppercase;
-    padding: 5px 0 10px 5px ;
+    padding: 5px;
     margin-left: 5px;
     font-family: 'Proxima-Nova' ,sans-serif;
     font-size: 18px;
-    font-weight: 400;
+    /* font-weight: 400; */
 }
 
 .span-label {
