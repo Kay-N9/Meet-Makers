@@ -29,6 +29,7 @@ class UserType
      */
     private $users;
 
+
     public function __construct()
     {
         $this->users = new ArrayCollection();
@@ -79,5 +80,10 @@ class UserType
         }
 
         return $this;
+    }
+
+    public function getLabel(): string
+    {
+        return "Je suis ".$this->getName();
     }
 }

@@ -1,0 +1,288 @@
+/************************************* IMPORT TYPO *************************************/
+
+/***** Bebas Neue *****/
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
+
+/***** Proxima regular *****/
+@font-face {
+    font-family: 'Proxima-Nova-Regular';
+    src: url(../font/Proxima-Nova/regular/Proxima-Nova-Regular.otf) format("opentype"),
+        url(../font/Proxima-Nova/regular/Proxima-Nova-Regular.ttf) format("truetype"),
+        url(../font/Proxima-Nova/regular/Proxima-Nova-Regular.woff) format("woff");
+}
+
+/***** Proxima bold *****/
+@font-face {
+    font-family: 'Proxima-Nova-Bold';
+    src: url(../font/Proxima-Nova/bold/Proxima-Nova-Bold.otf) format("opentype"),
+        url(../font/Proxima-Nova/bold/Proxima-Nova-Bold.ttf) format("truetype"),
+        url(../font/Proxima-Nova/bold/Proxima-Nova-Bold.woff2) format("woff2");
+}
+
+/***** Good brush *****/
+@font-face {
+    font-family: 'Good-Brush';
+    src: url(../font/Good-Brush/Good-Brush.otf) format("opentype"),
+        url(../font/Good-Brush/Good-Brush.ttf) format("truetype"),
+        url(../font/Good-Brush/Good-Brush.woff) format("woff");
+}
+
+/***** Digital Number *****/
+@font-face {
+    font-family: 'Digital-Number';
+    src: url(../font/Digital-Number/Digital-Numbers-Regular.ttf) format("truetype"),
+        url(../font/Digital-Number/Digital-Numbers-Regular.woff) format("woff");
+}
+
+/************************************* GENERAL *************************************/
+
+/*********** Variables ***********/
+:root {
+    /** couleurs **/
+    --meet-white: #FBF7FB;
+    --meet-black: #1c0f22;
+    --meet-dark-purple: #31193C;
+    --meet-purple: #7836CC;
+    --meet-light-purple: #d2a3ff;
+    --meet-blue: #5322E0;
+    --meet-pink: #E926BE;
+    --meet-orange: #ef6b0b;
+    --meet-light-orange: #f3a242;
+    /* degrades */
+    --meet-orange-gradient: linear-gradient(45deg, #ef6b0b, #f3a242);
+    --meet-purple-gradient: linear-gradient(45deg, #8C35DD, #5322E0);
+    --meet-pink-gradient: linear-gradient(-45deg, rgba(10, 28, 125, 0.8), rgba(245, 31, 250, .8));
+}
+
+/*///// ! Privilégiez l'utilisation des variables pour éviter les erreurs /////*/
+
+/*********** Début modif couleurs bootstrap ***********/
+.text-white {
+    color: var(--meet-white) !important;
+}
+/*********** Fin modif couleurs bootstrap ***********/
+
+/*********** Début modif radius ***********/
+.rounded-3 {
+    border-radius: 10px !important;
+}
+/*********** Fin modif radius ***********/
+
+/*********** Début général ***********/
+html {
+    font-size: 62.5%;
+    /* font-size=1rem=10px*/
+}
+
+body {
+    background: url(../img/background.jpg) no-repeat;
+}
+
+/*********** Fin général ***********/
+
+/************************************* TYPOS *************************************/
+nav a,
+.boutons-registration,
+#bouton-voir-projet {
+    font-family: 'Bebas Neue';
+    font-size: 2.3rem;
+}
+
+.filet-titres {
+    height: 4px;
+    width: 80%;
+    max-width: 300px;
+    background-color: var(--meet-white);
+}
+
+.chevron-titre {
+    vertical-align: baseline;
+}
+
+h1,
+h2,
+h3 {
+    font-family: 'Bebas Neue';
+}
+
+h1 {
+    font-size: 4rem;
+}
+
+h2 {
+    font-size: 3.2rem;
+}
+
+h3 {
+    font-size: 2.7rem;
+}
+
+h4,
+h5,
+h6 {
+    font-family: 'Proxima-Nova-Bold';
+}
+
+h4 {
+    font-size: 2rem;
+}
+
+h5 {
+    font-size: 1.8rem;
+}
+
+h5 {
+    font-size: 1.6rem;
+}
+
+/************************************* CARDS *************************************/
+
+/****************** CARTE ARTISTE ******************/
+.carte-artiste {
+    width: 390px;
+    height: 485px;
+    border: 0;
+    box-shadow: 0 0 15px 4px rgba(120, 54, 204, 0.6);
+}
+
+.titre-card-artiste {
+    font-family: 'Bebas Neue';
+    font-size: 3.6rem;
+}
+
+.text-card-artiste {
+    font-family: 'Proxima-Nova-Regular';
+    font-size: 2.3rem;
+}
+
+.style-musique-card-artiste, .localisation-card-artiste {
+    font-family: 'Proxima-Nova-Regular';
+    font-size: 2rem;
+}
+
+.texte-bottom-card-artiste {
+    font-family: "Proxima Nova";
+}
+
+/****************** CARTE CANDIDAT GENERAL ******************/
+#carte-candidat-gagnant, .carte-candidat-small{
+    background: linear-gradient(125deg, rgba(216,27,221,0.8), rgba(10,28,125,0.8));
+    box-shadow: 0 0 6px var(--meet-light-purple);
+    border-radius: 10px;
+}
+
+.carte-candidat-img-top, .carte-candidat-small-img-top{
+    border-radius: 10px 10px 0 0;
+}
+
+.photo-carte-profil, .photo-carte-small-profil{
+    display: block;
+}
+
+.carte-candidat-title, .carte-candidat-small-title {
+    font-family: 'Bebas Neue'; 
+}
+
+.carte-candidat-location p, .carte-candidat-small-location p {
+    font-size: 1.5rem;    
+}
+/****************** CARTE CANDIDAT GAGNANT ******************/
+#carte-candidat-gagnant{
+    width: 426px;
+    height: 426px;
+}
+
+.photo-carte-profil{
+    margin-top: -5rem; 
+}
+
+.carte-candidat-title {
+    font-size: 2.4rem;
+}
+
+.icone-localisation{
+    height: 25px;
+}
+
+.carte-candidat-reseaux>img {
+    height: 40px;
+}
+
+/****************** CARTE CANDIDAT SMALL ******************/
+.carte-candidat-small {
+    width: 350px;
+    height: 350px;
+}
+
+.carte-candidat-small-img-top{
+    width: 100%;
+}
+
+.photo-carte-small-profil{
+    width: 80px;
+    margin-top: -4rem; 
+}
+
+.carte-candidat-small-title {
+    font-size: 2rem;
+}
+
+.carte-candidat-small-location>img {
+    font-size: 1rem;
+}
+
+.carte-candidat-small-location p {
+    font-size: 1.5rem;    
+}
+
+.carte-candidat-small-reseaux>img {
+    height: 30px;
+}
+
+/************************************* IMAGES *************************************/
+
+/************************************* BOUTONS *************************************/
+/*********** Boutons Général ***********/
+.btn:focus,
+.btn:active {
+    box-shadow: none;
+}
+
+.btn-outline-light:active {
+    background-color: unset;
+}
+
+/*********** Fin Boutons Général ***********/
+
+/*********** Boutons Candidate ***********/
+#bouton-candidate{
+    display: none;
+    font-family: 'Bebas Neue';
+    background-color: var(--meet-light-orange);
+    font-size: 2rem;
+    color: var(--meet-white);
+    margin-bottom: 70px;
+}
+
+#bouton-candidate:hover{
+    background-image: var(--meet-orange-gradient);
+}
+
+#bouton-vote{
+    display: none;
+    font-family: 'Bebas Neue';
+    background-color: var(--meet-orange);
+    font-size: 1.5rem;
+    color: var(--meet-white);
+}
+
+#bouton-vote:hover{
+    background-color: var(--meet-dark-purple);
+}
+/************************************* NAVBARRE *************************************/
+
+/************************************* HEADER *************************************/
+
+/************************************* MAIN *************************************/
+
+/************************************* FOOTER *************************************/
