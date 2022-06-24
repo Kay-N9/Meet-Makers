@@ -1,0 +1,24 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Re - {{ parent() }}{% endblock %}
+
+{% block body %}
+<style>
+    .example-wrapper { margin: 1em auto; max-width: 800px; width: 95%; font: 18px/1.5 sans-serif; }
+    .example-wrapper code { background: #F5F5F5; padding: 2px 6px; }
+</style>
+
+<div class="example-wrapper">
+    <article>
+        <img scr=''/>
+        <h3>{{user.nickname}}</h3>
+
+        {# <h4>{{user.voteInfo.0.voteDonee}}</h4> #}
+        <ul>
+            {# <li>{{user.categories.name}}</li> #}
+            {# <li>{{user.reseaux.name}}</li> #}
+        </ul>
+    </article>
+    
+</div>
+{% endblock %}
